@@ -1,0 +1,1464 @@
+[ 2016-12-07T22:02:28+08:00 ] 127.0.0.1 /index.php/Admin/Goods/lst
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `p39_goods` [ RunTime:0.0540s ]
+NOTIC: [8] Undefined variable: where F:\thinkphp\Application\Admin\Model\GoodsModel.class.php 第 214 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `p39_goods` LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [8] Undefined variable: where F:\thinkphp\Application\Admin\Model\GoodsModel.class.php 第 222 行.
+SQL: SELECT * FROM `p39_goods` ORDER BY id desc LIMIT 0,10   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: val F:\thinkphp\Application\Runtime\Cache\Admin\12cf6a5c74297688873998de0720405d.php 第 78 行.
+NOTIC: [8] Undefined variable: val F:\thinkphp\Application\Runtime\Cache\Admin\12cf6a5c74297688873998de0720405d.php 第 78 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-12-07T22:06:26+08:00 ] 127.0.0.1 /index.php/Admin/Goods/lst
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `p39_goods` [ RunTime:0.0040s ]
+NOTIC: [8] Undefined variable: where F:\thinkphp\Application\Admin\Model\GoodsModel.class.php 第 214 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `p39_goods` LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined variable: where F:\thinkphp\Application\Admin\Model\GoodsModel.class.php 第 222 行.
+SQL: SELECT * FROM `p39_goods` ORDER BY id desc LIMIT 0,10   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: val F:\thinkphp\Application\Runtime\Cache\Admin\12cf6a5c74297688873998de0720405d.php 第 78 行.
+NOTIC: [8] Undefined variable: val F:\thinkphp\Application\Runtime\Cache\Admin\12cf6a5c74297688873998de0720405d.php 第 78 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-12-07T22:07:21+08:00 ] 127.0.0.1 /index.php/Admin/Goods/lst
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `p39_goods` [ RunTime:0.0030s ]
+NOTIC: [8] Undefined variable: where F:\thinkphp\Application\Admin\Model\GoodsModel.class.php 第 214 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `p39_goods` LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [8] Undefined variable: where F:\thinkphp\Application\Admin\Model\GoodsModel.class.php 第 222 行.
+SQL: SELECT * FROM `p39_goods` ORDER BY id desc LIMIT 0,10   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-12-07T22:07:36+08:00 ] 127.0.0.1 /index.php/Admin/Goods/lst
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `p39_goods` [ RunTime:0.0040s ]
+NOTIC: [8] Undefined variable: where F:\thinkphp\Application\Admin\Model\GoodsModel.class.php 第 214 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `p39_goods` LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined variable: where F:\thinkphp\Application\Admin\Model\GoodsModel.class.php 第 222 行.
+SQL: SELECT * FROM `p39_goods` ORDER BY id desc LIMIT 0,10   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: val F:\thinkphp\Application\Runtime\Cache\Admin\12cf6a5c74297688873998de0720405d.php 第 78 行.
+NOTIC: [8] Undefined variable: val F:\thinkphp\Application\Runtime\Cache\Admin\12cf6a5c74297688873998de0720405d.php 第 78 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-12-07T22:08:41+08:00 ] 127.0.0.1 /index.php/Admin/Goods/lst
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `p39_goods` [ RunTime:0.0030s ]
+NOTIC: [8] Undefined variable: where F:\thinkphp\Application\Admin\Model\GoodsModel.class.php 第 214 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `p39_goods` LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined variable: where F:\thinkphp\Application\Admin\Model\GoodsModel.class.php 第 222 行.
+SQL: SELECT * FROM `p39_goods` ORDER BY id desc LIMIT 0,10   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: val F:\thinkphp\Application\Runtime\Cache\Admin\12cf6a5c74297688873998de0720405d.php 第 78 行.
+NOTIC: [8] Undefined variable: val F:\thinkphp\Application\Runtime\Cache\Admin\12cf6a5c74297688873998de0720405d.php 第 78 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-12-07T22:15:10+08:00 ] 127.0.0.1 /index.php/Admin/Goods/lst
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `p39_goods` [ RunTime:0.0030s ]
+NOTIC: [8] Undefined variable: where F:\thinkphp\Application\Admin\Model\GoodsModel.class.php 第 214 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `p39_goods` LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined variable: where F:\thinkphp\Application\Admin\Model\GoodsModel.class.php 第 222 行.
+SQL: SELECT * FROM `p39_goods` ORDER BY id desc LIMIT 0,10   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: val F:\thinkphp\Application\Runtime\Cache\Admin\12cf6a5c74297688873998de0720405d.php 第 78 行.
+NOTIC: [8] Undefined variable: val F:\thinkphp\Application\Runtime\Cache\Admin\12cf6a5c74297688873998de0720405d.php 第 78 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-07T22:15:11+08:00 ] 127.0.0.1 /index.php/Admin/Goods/lst
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `p39_goods` [ RunTime:0.0030s ]
+NOTIC: [8] Undefined variable: where F:\thinkphp\Application\Admin\Model\GoodsModel.class.php 第 214 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `p39_goods` LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined variable: where F:\thinkphp\Application\Admin\Model\GoodsModel.class.php 第 222 行.
+SQL: SELECT * FROM `p39_goods` ORDER BY id desc LIMIT 0,10   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: val F:\thinkphp\Application\Runtime\Cache\Admin\12cf6a5c74297688873998de0720405d.php 第 78 行.
+NOTIC: [8] Undefined variable: val F:\thinkphp\Application\Runtime\Cache\Admin\12cf6a5c74297688873998de0720405d.php 第 78 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-07T22:15:28+08:00 ] 127.0.0.1 /index.php/Admin/Goods/lst
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `p39_goods` [ RunTime:0.0030s ]
+NOTIC: [8] Undefined variable: where F:\thinkphp\Application\Admin\Model\GoodsModel.class.php 第 214 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `p39_goods` LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined variable: where F:\thinkphp\Application\Admin\Model\GoodsModel.class.php 第 222 行.
+SQL: SELECT * FROM `p39_goods` ORDER BY id desc LIMIT 0,10   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: val F:\thinkphp\Application\Runtime\Cache\Admin\12cf6a5c74297688873998de0720405d.php 第 78 行.
+NOTIC: [8] Undefined variable: val F:\thinkphp\Application\Runtime\Cache\Admin\12cf6a5c74297688873998de0720405d.php 第 78 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-07T22:15:41+08:00 ] 127.0.0.1 /index.php/Admin/Goods/lst
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `p39_goods` [ RunTime:0.0030s ]
+NOTIC: [8] Undefined variable: where F:\thinkphp\Application\Admin\Model\GoodsModel.class.php 第 214 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `p39_goods` LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [8] Undefined variable: where F:\thinkphp\Application\Admin\Model\GoodsModel.class.php 第 222 行.
+SQL: SELECT * FROM `p39_goods` ORDER BY id desc LIMIT 0,10   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: val F:\thinkphp\Application\Runtime\Cache\Admin\12cf6a5c74297688873998de0720405d.php 第 78 行.
+NOTIC: [8] Undefined variable: val F:\thinkphp\Application\Runtime\Cache\Admin\12cf6a5c74297688873998de0720405d.php 第 78 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-07T22:17:58+08:00 ] 127.0.0.1 /index.php/Admin/Goods/lst
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `p39_goods` [ RunTime:0.0030s ]
+NOTIC: [8] Undefined variable: where F:\thinkphp\Application\Admin\Model\GoodsModel.class.php 第 214 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `p39_goods` LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined variable: where F:\thinkphp\Application\Admin\Model\GoodsModel.class.php 第 222 行.
+SQL: SELECT * FROM `p39_goods` ORDER BY id desc LIMIT 0,10   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: val F:\thinkphp\Application\Runtime\Cache\Admin\12cf6a5c74297688873998de0720405d.php 第 78 行.
+NOTIC: [8] Undefined variable: val F:\thinkphp\Application\Runtime\Cache\Admin\12cf6a5c74297688873998de0720405d.php 第 78 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-12-07T22:18:00+08:00 ] 127.0.0.1 /index.php/Admin/Goods/edit/id/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `p39_goods` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `p39_goods` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-12-07T23:21:32+08:00 ] 127.0.0.1 /index.php/Admin/Goods/lst.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-12-07T23:21:49+08:00 ] 127.0.0.1 /index.php/Admin/Goods/lst.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `p39_goods` [ RunTime:0.0040s ]
+NOTIC: [8] Undefined variable: where F:\thinkphp\Application\Admin\Model\GoodsModel.class.php 第 151 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `p39_goods` LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined variable: where F:\thinkphp\Application\Admin\Model\GoodsModel.class.php 第 159 行.
+SQL: SELECT * FROM `p39_goods` ORDER BY id desc LIMIT 0,10   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: val F:\thinkphp\Application\Runtime\Cache\Admin\12cf6a5c74297688873998de0720405d.php 第 78 行.
+NOTIC: [8] Undefined variable: val F:\thinkphp\Application\Runtime\Cache\Admin\12cf6a5c74297688873998de0720405d.php 第 78 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-12-07T23:21:52+08:00 ] 127.0.0.1 /index.php/Admin/Goods/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-12-07T23:22:58+08:00 ] 127.0.0.1 /index.php/Admin/Goods/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `p39_goods` [ RunTime:0.0030s ]
+SQL: INSERT INTO `p39_goods` (`goods_name`,`market_price`,`shop_price`,`is_on_sale`,`goods_desc`,`addtime`) VALUES ('test3','55','51','是','<p>test3</p>','2016-12-07 23:22:57') [ RunTime:0.0020s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.042002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.042002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-12-07T23:22:59+08:00 ] 127.0.0.1 /index.php/Admin/Goods/lst.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `p39_goods` [ RunTime:0.0060s ]
+NOTIC: [8] Undefined variable: where F:\thinkphp\Application\Admin\Model\GoodsModel.class.php 第 151 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `p39_goods` LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined variable: where F:\thinkphp\Application\Admin\Model\GoodsModel.class.php 第 159 行.
+SQL: SELECT * FROM `p39_goods` ORDER BY id desc LIMIT 0,10   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: val F:\thinkphp\Application\Runtime\Cache\Admin\12cf6a5c74297688873998de0720405d.php 第 78 行.
+NOTIC: [8] Undefined variable: val F:\thinkphp\Application\Runtime\Cache\Admin\12cf6a5c74297688873998de0720405d.php 第 78 行.
+NOTIC: [8] Undefined variable: val F:\thinkphp\Application\Runtime\Cache\Admin\12cf6a5c74297688873998de0720405d.php 第 78 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-12-07T23:25:27+08:00 ] 127.0.0.1 /index.php/Admin/Goods/lst.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `p39_goods` [ RunTime:0.0030s ]
+NOTIC: [8] Undefined variable: where F:\thinkphp\Application\Admin\Model\GoodsModel.class.php 第 151 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `p39_goods` LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined variable: where F:\thinkphp\Application\Admin\Model\GoodsModel.class.php 第 159 行.
+SQL: SELECT * FROM `p39_goods` ORDER BY id desc LIMIT 0,10   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: val F:\thinkphp\Application\Runtime\Cache\Admin\12cf6a5c74297688873998de0720405d.php 第 78 行.
+NOTIC: [8] Undefined variable: val F:\thinkphp\Application\Runtime\Cache\Admin\12cf6a5c74297688873998de0720405d.php 第 78 行.
+NOTIC: [8] Undefined variable: val F:\thinkphp\Application\Runtime\Cache\Admin\12cf6a5c74297688873998de0720405d.php 第 78 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-12-07T23:25:31+08:00 ] 127.0.0.1 /index.php/Admin/Goods/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-12-07T23:25:41+08:00 ] 127.0.0.1 /index.php/Admin/Goods/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `p39_goods` [ RunTime:0.0030s ]
+SQL: INSERT INTO `p39_goods` (`goods_name`,`market_price`,`shop_price`,`is_on_sale`,`goods_desc`,`addtime`) VALUES ('test3','60','66','是','<p>test3</p>','2016-12-07 23:25:40') [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001001s ]
+
+[ 2016-12-07T23:25:42+08:00 ] 127.0.0.1 /index.php/Admin/Goods/lst.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `p39_goods` [ RunTime:0.0040s ]
+NOTIC: [8] Undefined variable: where F:\thinkphp\Application\Admin\Model\GoodsModel.class.php 第 151 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `p39_goods` LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined variable: where F:\thinkphp\Application\Admin\Model\GoodsModel.class.php 第 159 行.
+SQL: SELECT * FROM `p39_goods` ORDER BY id desc LIMIT 0,10   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: val F:\thinkphp\Application\Runtime\Cache\Admin\12cf6a5c74297688873998de0720405d.php 第 78 行.
+NOTIC: [8] Undefined variable: val F:\thinkphp\Application\Runtime\Cache\Admin\12cf6a5c74297688873998de0720405d.php 第 78 行.
+NOTIC: [8] Undefined variable: val F:\thinkphp\Application\Runtime\Cache\Admin\12cf6a5c74297688873998de0720405d.php 第 78 行.
+NOTIC: [8] Undefined variable: val F:\thinkphp\Application\Runtime\Cache\Admin\12cf6a5c74297688873998de0720405d.php 第 78 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-12-07T23:26:51+08:00 ] 127.0.0.1 /index.php/Admin/Goods/lst.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `p39_goods` [ RunTime:0.0030s ]
+NOTIC: [8] Undefined variable: where F:\thinkphp\Application\Admin\Model\GoodsModel.class.php 第 152 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `p39_goods` LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [8] Undefined variable: where F:\thinkphp\Application\Admin\Model\GoodsModel.class.php 第 160 行.
+SQL: SELECT * FROM `p39_goods` ORDER BY id desc LIMIT 0,10   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: val F:\thinkphp\Application\Runtime\Cache\Admin\12cf6a5c74297688873998de0720405d.php 第 78 行.
+NOTIC: [8] Undefined variable: val F:\thinkphp\Application\Runtime\Cache\Admin\12cf6a5c74297688873998de0720405d.php 第 78 行.
+NOTIC: [8] Undefined variable: val F:\thinkphp\Application\Runtime\Cache\Admin\12cf6a5c74297688873998de0720405d.php 第 78 行.
+NOTIC: [8] Undefined variable: val F:\thinkphp\Application\Runtime\Cache\Admin\12cf6a5c74297688873998de0720405d.php 第 78 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-07T23:26:55+08:00 ] 127.0.0.1 /index.php/Admin/Goods/edit/id/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `p39_goods` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `p39_goods` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-12-07T23:27:10+08:00 ] 127.0.0.1 /index.php/Admin/Goods/edit
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `p39_goods` [ RunTime:0.0040s ]
+SQL: SELECT `logo`,`sm_logo`,`mid_logo`,`big_logo`,`mbig_logo` FROM `p39_goods` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined variable: array F:\thinkphp\Application\Common\Common\function.php 第 44 行.
+NOTIC: [2] Invalid argument supplied for foreach() F:\thinkphp\Application\Common\Common\function.php 第 44 行.
+SQL: UPDATE `p39_goods` SET `goods_name`='test3',`market_price`='60.00',`shop_price`='56.00',`is_on_sale`='是',`goods_desc`='<p>test4</p>' WHERE `id` = 4 [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-07T23:27:11+08:00 ] 127.0.0.1 /index.php/Admin/Goods/lst.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `p39_goods` [ RunTime:0.0040s ]
+NOTIC: [8] Undefined variable: where F:\thinkphp\Application\Admin\Model\GoodsModel.class.php 第 152 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `p39_goods` LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined variable: where F:\thinkphp\Application\Admin\Model\GoodsModel.class.php 第 160 行.
+SQL: SELECT * FROM `p39_goods` ORDER BY id desc LIMIT 0,10   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: val F:\thinkphp\Application\Runtime\Cache\Admin\12cf6a5c74297688873998de0720405d.php 第 78 行.
+NOTIC: [8] Undefined variable: val F:\thinkphp\Application\Runtime\Cache\Admin\12cf6a5c74297688873998de0720405d.php 第 78 行.
+NOTIC: [8] Undefined variable: val F:\thinkphp\Application\Runtime\Cache\Admin\12cf6a5c74297688873998de0720405d.php 第 78 行.
+NOTIC: [8] Undefined variable: val F:\thinkphp\Application\Runtime\Cache\Admin\12cf6a5c74297688873998de0720405d.php 第 78 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-07T23:29:22+08:00 ] 127.0.0.1 /index.php/Admin/Goods/lst.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `p39_goods` [ RunTime:0.0030s ]
+NOTIC: [8] Undefined variable: where F:\thinkphp\Application\Admin\Model\GoodsModel.class.php 第 152 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `p39_goods` LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [8] Undefined variable: where F:\thinkphp\Application\Admin\Model\GoodsModel.class.php 第 160 行.
+SQL: SELECT * FROM `p39_goods` ORDER BY id desc LIMIT 0,10   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: val F:\thinkphp\Application\Runtime\Cache\Admin\12cf6a5c74297688873998de0720405d.php 第 78 行.
+NOTIC: [8] Undefined variable: val F:\thinkphp\Application\Runtime\Cache\Admin\12cf6a5c74297688873998de0720405d.php 第 78 行.
+NOTIC: [8] Undefined variable: val F:\thinkphp\Application\Runtime\Cache\Admin\12cf6a5c74297688873998de0720405d.php 第 78 行.
+NOTIC: [8] Undefined variable: val F:\thinkphp\Application\Runtime\Cache\Admin\12cf6a5c74297688873998de0720405d.php 第 78 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-12-07T23:29:24+08:00 ] 127.0.0.1 /index.php/Admin/Goods/edit/id/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `p39_goods` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `p39_goods` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-12-07T23:29:34+08:00 ] 127.0.0.1 /index.php/Admin/Goods/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-12-07T23:29:44+08:00 ] 127.0.0.1 /index.php/Admin/Goods/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-12-07T23:30:04+08:00 ] 127.0.0.1 /index.php/Admin/Goods/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `p39_goods` [ RunTime:0.0030s ]
+
+[ 2016-12-07T23:32:02+08:00 ] 127.0.0.1 /index.php/Admin/Goods/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `p39_goods` [ RunTime:0.0030s ]
+
+[ 2016-12-07T23:32:03+08:00 ] 127.0.0.1 /index.php/Admin/Goods/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `p39_goods` [ RunTime:0.0030s ]
+
+[ 2016-12-07T23:32:05+08:00 ] 127.0.0.1 /index.php/Admin/Goods/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-07T23:32:08+08:00 ] 127.0.0.1 /index.php/Admin/Goods/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-12-07T23:32:31+08:00 ] 127.0.0.1 /index.php/Admin/Goods/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `p39_goods` [ RunTime:0.0040s ]
+SQL: INSERT INTO `p39_goods` (`goods_name`,`market_price`,`shop_price`,`is_on_sale`,`goods_desc`,`addtime`) VALUES ('test4','99','98','是','<p>test4</p>','2016-12-07 23:32:31') [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-12-07T23:32:33+08:00 ] 127.0.0.1 /index.php/Admin/Goods/lst.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `p39_goods` [ RunTime:0.0030s ]
+NOTIC: [8] Undefined variable: where F:\thinkphp\Application\Admin\Model\GoodsModel.class.php 第 151 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `p39_goods` LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined variable: where F:\thinkphp\Application\Admin\Model\GoodsModel.class.php 第 159 行.
+SQL: SELECT * FROM `p39_goods` ORDER BY id desc LIMIT 0,10   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: val F:\thinkphp\Application\Runtime\Cache\Admin\12cf6a5c74297688873998de0720405d.php 第 78 行.
+NOTIC: [8] Undefined variable: val F:\thinkphp\Application\Runtime\Cache\Admin\12cf6a5c74297688873998de0720405d.php 第 78 行.
+NOTIC: [8] Undefined variable: val F:\thinkphp\Application\Runtime\Cache\Admin\12cf6a5c74297688873998de0720405d.php 第 78 行.
+NOTIC: [8] Undefined variable: val F:\thinkphp\Application\Runtime\Cache\Admin\12cf6a5c74297688873998de0720405d.php 第 78 行.
+NOTIC: [8] Undefined variable: val F:\thinkphp\Application\Runtime\Cache\Admin\12cf6a5c74297688873998de0720405d.php 第 78 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-12-07T23:33:00+08:00 ] 127.0.0.1 /index.php/Admin/Goods/delete/id/5.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `p39_goods` [ RunTime:0.0040s ]
+SQL: SELECT `logo`,`sm_logo`,`mid_logo`,`big_logo`,`mbig_logo` FROM `p39_goods` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined variable: array F:\thinkphp\Application\Common\Common\function.php 第 44 行.
+NOTIC: [2] Invalid argument supplied for foreach() F:\thinkphp\Application\Common\Common\function.php 第 44 行.
+SQL: DELETE FROM `p39_goods` WHERE `id` = 5 [ RunTime:0.0020s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-12-07T23:33:01+08:00 ] 127.0.0.1 /index.php/Admin/Goods/lst.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `p39_goods` [ RunTime:0.0030s ]
+NOTIC: [8] Undefined variable: where F:\thinkphp\Application\Admin\Model\GoodsModel.class.php 第 151 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `p39_goods` LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined variable: where F:\thinkphp\Application\Admin\Model\GoodsModel.class.php 第 159 行.
+SQL: SELECT * FROM `p39_goods` ORDER BY id desc LIMIT 0,10   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: val F:\thinkphp\Application\Runtime\Cache\Admin\12cf6a5c74297688873998de0720405d.php 第 78 行.
+NOTIC: [8] Undefined variable: val F:\thinkphp\Application\Runtime\Cache\Admin\12cf6a5c74297688873998de0720405d.php 第 78 行.
+NOTIC: [8] Undefined variable: val F:\thinkphp\Application\Runtime\Cache\Admin\12cf6a5c74297688873998de0720405d.php 第 78 行.
+NOTIC: [8] Undefined variable: val F:\thinkphp\Application\Runtime\Cache\Admin\12cf6a5c74297688873998de0720405d.php 第 78 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-12-07T23:33:03+08:00 ] 127.0.0.1 /index.php/Admin/Goods/delete/id/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `p39_goods` [ RunTime:0.0040s ]
+SQL: SELECT `logo`,`sm_logo`,`mid_logo`,`big_logo`,`mbig_logo` FROM `p39_goods` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [8] Undefined variable: array F:\thinkphp\Application\Common\Common\function.php 第 44 行.
+NOTIC: [2] Invalid argument supplied for foreach() F:\thinkphp\Application\Common\Common\function.php 第 44 行.
+SQL: DELETE FROM `p39_goods` WHERE `id` = 4 [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-12-07T23:33:05+08:00 ] 127.0.0.1 /index.php/Admin/Goods/lst.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `p39_goods` [ RunTime:0.0030s ]
+NOTIC: [8] Undefined variable: where F:\thinkphp\Application\Admin\Model\GoodsModel.class.php 第 151 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `p39_goods` LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined variable: where F:\thinkphp\Application\Admin\Model\GoodsModel.class.php 第 159 行.
+SQL: SELECT * FROM `p39_goods` ORDER BY id desc LIMIT 0,10   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: val F:\thinkphp\Application\Runtime\Cache\Admin\12cf6a5c74297688873998de0720405d.php 第 78 行.
+NOTIC: [8] Undefined variable: val F:\thinkphp\Application\Runtime\Cache\Admin\12cf6a5c74297688873998de0720405d.php 第 78 行.
+NOTIC: [8] Undefined variable: val F:\thinkphp\Application\Runtime\Cache\Admin\12cf6a5c74297688873998de0720405d.php 第 78 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-12-07T23:33:07+08:00 ] 127.0.0.1 /index.php/Admin/Goods/delete/id/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `p39_goods` [ RunTime:0.0040s ]
+SQL: SELECT `logo`,`sm_logo`,`mid_logo`,`big_logo`,`mbig_logo` FROM `p39_goods` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [8] Undefined variable: array F:\thinkphp\Application\Common\Common\function.php 第 44 行.
+NOTIC: [2] Invalid argument supplied for foreach() F:\thinkphp\Application\Common\Common\function.php 第 44 行.
+SQL: DELETE FROM `p39_goods` WHERE `id` = 3 [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-07T23:33:08+08:00 ] 127.0.0.1 /index.php/Admin/Goods/lst.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `p39_goods` [ RunTime:0.0030s ]
+NOTIC: [8] Undefined variable: where F:\thinkphp\Application\Admin\Model\GoodsModel.class.php 第 151 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `p39_goods` LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined variable: where F:\thinkphp\Application\Admin\Model\GoodsModel.class.php 第 159 行.
+SQL: SELECT * FROM `p39_goods` ORDER BY id desc LIMIT 0,10   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: val F:\thinkphp\Application\Runtime\Cache\Admin\12cf6a5c74297688873998de0720405d.php 第 78 行.
+NOTIC: [8] Undefined variable: val F:\thinkphp\Application\Runtime\Cache\Admin\12cf6a5c74297688873998de0720405d.php 第 78 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-12-07T23:34:49+08:00 ] 127.0.0.1 /index.php/Admin/Goods/lst.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `p39_goods` [ RunTime:0.0030s ]
+NOTIC: [8] Undefined variable: where F:\thinkphp\Application\Admin\Model\GoodsModel.class.php 第 151 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `p39_goods` LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [8] Undefined variable: where F:\thinkphp\Application\Admin\Model\GoodsModel.class.php 第 159 行.
+SQL: SELECT * FROM `p39_goods` ORDER BY id desc LIMIT 0,10   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: val F:\thinkphp\Application\Runtime\Cache\Admin\12cf6a5c74297688873998de0720405d.php 第 78 行.
+NOTIC: [8] Undefined variable: val F:\thinkphp\Application\Runtime\Cache\Admin\12cf6a5c74297688873998de0720405d.php 第 78 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-07T23:34:52+08:00 ] 127.0.0.1 /index.php/Admin/Goods/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-12-07T23:35:12+08:00 ] 127.0.0.1 /index.php/Admin/Goods/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `p39_goods` [ RunTime:0.0030s ]
+
+[ 2016-12-07T23:38:48+08:00 ] 127.0.0.1 /index.php/Admin/Goods/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `p39_goods` [ RunTime:0.0030s ]
+
+[ 2016-12-07T23:38:51+08:00 ] 127.0.0.1 /index.php/Admin/Goods/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `p39_goods` [ RunTime:0.0030s ]
+
+[ 2016-12-07T23:38:52+08:00 ] 127.0.0.1 /index.php/Admin/Goods/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-12-07T23:38:56+08:00 ] 127.0.0.1 /index.php/Admin/Goods/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `p39_goods` [ RunTime:0.0040s ]
+
+[ 2016-12-07T23:39:46+08:00 ] 127.0.0.1 /index.php/Admin/Goods/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-12-07T23:39:49+08:00 ] 127.0.0.1 /index.php/Admin/Goods/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `p39_goods` [ RunTime:0.0030s ]
+NOTIC: [8] Undefined index: maxSize F:\thinkphp\Application\Common\Common\function.php 第 11 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given F:\thinkphp\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+
+[ 2016-12-07T23:41:35+08:00 ] 127.0.0.1 /index.php/Admin/Goods/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-12-07T23:41:36+08:00 ] 127.0.0.1 /index.php/Admin/Goods/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-12-07T23:41:46+08:00 ] 127.0.0.1 /index.php/Admin/Goods/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `p39_goods` [ RunTime:0.0030s ]
+
+[ 2016-12-07T23:50:56+08:00 ] 127.0.0.1 /index.php/Admin/Goods/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `p39_goods` [ RunTime:0.0030s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given F:\thinkphp\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+
+[ 2016-12-07T23:51:34+08:00 ] 127.0.0.1 /index.php/Admin/Goods/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `p39_goods` [ RunTime:0.0030s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given F:\thinkphp\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Undefined index: savePath F:\thinkphp\Application\Common\Common\function.php 第 23 行.
+
+[ 2016-12-07T23:52:04+08:00 ] 127.0.0.1 /index.php/Admin/Goods/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `p39_goods` [ RunTime:0.0030s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given F:\thinkphp\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Undefined index: savePath F:\thinkphp\Application\Common\Common\function.php 第 23 行.
+NOTIC: [8] Undefined index: savePath F:\thinkphp\Application\Common\Common\function.php 第 29 行.
+ERR: 不存在的图像文件
+
+[ 2016-12-07T23:52:17+08:00 ] 127.0.0.1 /index.php/Admin/Goods/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-12-07T23:52:23+08:00 ] 127.0.0.1 /index.php/Admin/Goods/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `p39_goods` [ RunTime:0.0040s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given F:\thinkphp\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Undefined index: savePath F:\thinkphp\Application\Common\Common\function.php 第 23 行.
+NOTIC: [8] Undefined index: savePath F:\thinkphp\Application\Common\Common\function.php 第 29 行.
+ERR: 不存在的图像文件
+
+[ 2016-12-07T23:53:01+08:00 ] 127.0.0.1 /index.php/Admin/Goods/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `p39_goods` [ RunTime:0.0040s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given F:\thinkphp\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Undefined index: savePath F:\thinkphp\Application\Common\Common\function.php 第 23 行.
+
+[ 2016-12-07T23:53:50+08:00 ] 127.0.0.1 /index.php/Admin/Goods/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `p39_goods` [ RunTime:0.0030s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given F:\thinkphp\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Undefined index: savePath F:\thinkphp\Application\Common\Common\function.php 第 23 行.
+
+[ 2016-12-07T23:54:29+08:00 ] 127.0.0.1 /index.php/Admin/Goods/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `p39_goods` [ RunTime:0.0030s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given F:\thinkphp\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Undefined index: savePath F:\thinkphp\Application\Common\Common\function.php 第 23 行.
+
+[ 2016-12-07T23:54:40+08:00 ] 127.0.0.1 /index.php/Admin/Goods/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `p39_goods` [ RunTime:0.0040s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given F:\thinkphp\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Undefined index: savePath F:\thinkphp\Application\Common\Common\function.php 第 23 行.
+
+[ 2016-12-07T23:55:20+08:00 ] 127.0.0.1 /index.php/Admin/Goods/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `p39_goods` [ RunTime:0.0030s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given F:\thinkphp\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Undefined index: savePath F:\thinkphp\Application\Common\Common\function.php 第 23 行.
+
+[ 2016-12-07T23:55:30+08:00 ] 127.0.0.1 /index.php/Admin/Goods/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `p39_goods` [ RunTime:0.0040s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given F:\thinkphp\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Undefined index: savePath F:\thinkphp\Application\Common\Common\function.php 第 23 行.
+
+[ 2016-12-07T23:57:58+08:00 ] 127.0.0.1 /index.php/Admin/Goods/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `p39_goods` [ RunTime:0.0030s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given F:\thinkphp\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+
+[ 2016-12-07T23:58:37+08:00 ] 127.0.0.1 /index.php/Admin/Goods/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `p39_goods` [ RunTime:0.0040s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given F:\thinkphp\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: INSERT INTO `p39_goods` (`goods_name`,`market_price`,`shop_price`,`is_on_sale`,`goods_desc`,`addtime`,`logo`,`sm_logo`,`mid_logo`,`big_logo`,`mbig_logo`) VALUES ('fds','0','0','是','<p>fds</p>','2016-12-07 23:58:36','Goods/2016-12-07/584831ac5bef7.gif','Goods/2016-12-07/thumb_3_584831ac5bef7.gif','Goods/2016-12-07/thumb_2_584831ac5bef7.gif','Goods/2016-12-07/thumb_1_584831ac5bef7.gif','Goods/2016-12-07/thumb_0_584831ac5bef7.gif') [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-12-07T23:58:38+08:00 ] 127.0.0.1 /index.php/Admin/Goods/lst.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `p39_goods` [ RunTime:0.0040s ]
+NOTIC: [8] Undefined variable: where F:\thinkphp\Application\Admin\Model\GoodsModel.class.php 第 150 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `p39_goods` LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined variable: where F:\thinkphp\Application\Admin\Model\GoodsModel.class.php 第 158 行.
+SQL: SELECT * FROM `p39_goods` ORDER BY id desc LIMIT 0,10   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: val F:\thinkphp\Application\Runtime\Cache\Admin\12cf6a5c74297688873998de0720405d.php 第 78 行.
+NOTIC: [8] Undefined variable: val F:\thinkphp\Application\Runtime\Cache\Admin\12cf6a5c74297688873998de0720405d.php 第 78 行.
+NOTIC: [8] Undefined variable: val F:\thinkphp\Application\Runtime\Cache\Admin\12cf6a5c74297688873998de0720405d.php 第 78 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-12-07T23:58:50+08:00 ] 127.0.0.1 /index.php/Admin/Goods/edit/id/6.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `p39_goods` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `p39_goods` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-07T23:59:12+08:00 ] 127.0.0.1 /index.php/Admin/Goods/edit
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `p39_goods` [ RunTime:0.0030s ]
+SQL: UPDATE `p39_goods` SET `goods_name`='test3',`market_price`='99',`shop_price`='98',`is_on_sale`='是',`goods_desc`='<p>test3</p>' WHERE `id` = 6 [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-07T23:59:13+08:00 ] 127.0.0.1 /index.php/Admin/Goods/lst.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `p39_goods` [ RunTime:0.0030s ]
+NOTIC: [8] Undefined variable: where F:\thinkphp\Application\Admin\Model\GoodsModel.class.php 第 150 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `p39_goods` LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined variable: where F:\thinkphp\Application\Admin\Model\GoodsModel.class.php 第 158 行.
+SQL: SELECT * FROM `p39_goods` ORDER BY id desc LIMIT 0,10   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: val F:\thinkphp\Application\Runtime\Cache\Admin\12cf6a5c74297688873998de0720405d.php 第 78 行.
+NOTIC: [8] Undefined variable: val F:\thinkphp\Application\Runtime\Cache\Admin\12cf6a5c74297688873998de0720405d.php 第 78 行.
+NOTIC: [8] Undefined variable: val F:\thinkphp\Application\Runtime\Cache\Admin\12cf6a5c74297688873998de0720405d.php 第 78 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-12-07T23:59:21+08:00 ] 127.0.0.1 /index.php/Admin/Goods/edit/id/6.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `p39_goods` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `p39_goods` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-07T23:59:30+08:00 ] 127.0.0.1 /index.php/Admin/Goods/edit
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `p39_goods` [ RunTime:0.0030s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given F:\thinkphp\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: SELECT `logo`,`sm_logo`,`mid_logo`,`big_logo`,`mbig_logo` FROM `p39_goods` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [8] Undefined variable: array F:\thinkphp\Application\Common\Common\function.php 第 43 行.
+NOTIC: [2] Invalid argument supplied for foreach() F:\thinkphp\Application\Common\Common\function.php 第 43 行.
+SQL: UPDATE `p39_goods` SET `goods_name`='test3',`market_price`='99.00',`shop_price`='98.00',`is_on_sale`='是',`goods_desc`='<p>test3</p>',`logo`='Goods/2016-12-07/584831e254636.jpg',`sm_logo`='Goods/2016-12-07/thumb_3_584831e254636.jpg',`mid_logo`='Goods/2016-12-07/thumb_2_584831e254636.jpg',`big_logo`='Goods/2016-12-07/thumb_1_584831e254636.jpg',`mbig_logo`='Goods/2016-12-07/thumb_0_584831e254636.jpg' WHERE `id` = 6 [ RunTime:0.0020s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-07T23:59:32+08:00 ] 127.0.0.1 /index.php/Admin/Goods/lst.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `p39_goods` [ RunTime:0.0030s ]
+NOTIC: [8] Undefined variable: where F:\thinkphp\Application\Admin\Model\GoodsModel.class.php 第 150 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `p39_goods` LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined variable: where F:\thinkphp\Application\Admin\Model\GoodsModel.class.php 第 158 行.
+SQL: SELECT * FROM `p39_goods` ORDER BY id desc LIMIT 0,10   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: val F:\thinkphp\Application\Runtime\Cache\Admin\12cf6a5c74297688873998de0720405d.php 第 78 行.
+NOTIC: [8] Undefined variable: val F:\thinkphp\Application\Runtime\Cache\Admin\12cf6a5c74297688873998de0720405d.php 第 78 行.
+NOTIC: [8] Undefined variable: val F:\thinkphp\Application\Runtime\Cache\Admin\12cf6a5c74297688873998de0720405d.php 第 78 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
