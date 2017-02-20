@@ -82,4 +82,33 @@ class CategoryModel extends Model
 			1	=>	implode(',', $children),
 		);
 	}
+
+	//首页导航条数据--> 获取分类
+	public function getNavData(){
+		//读取缓存,如果已经有缓存直接返回，否则查找数据库
+		$catData = S('catData');
+		if(!$catData){
+			$all = $this->select();
+			$ret = array();
+			foreach($all as $k=>$v){
+				if($v['parent_id']==0){
+					foreach($all as $k1=>$v1){
+						if($v1['parent_id']==$v['id']){
+							foreach($all as $k2=>$v2){
+								if($v2['parent_id']==$v1['id']){
+									$v1['children'][] = $v2;
+								}
+							}
+							$v['children'][] = $v1;
+						}
+					}
+					$ret[] = $v;
+				}
+			}
+			S('catData', $ret, 86400);
+			return $ret;
+		}else{
+			return $catData;
+		}
+	}
 }

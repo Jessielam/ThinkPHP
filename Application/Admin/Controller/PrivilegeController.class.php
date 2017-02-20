@@ -1,7 +1,7 @@
 <?php
 namespace Admin\Controller;
-use Think\Controller;
-class PrivilegeController extends Controller 
+
+class PrivilegeController extends BaseController 
 {
     public function add()
     {

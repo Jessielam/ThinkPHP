@@ -1,7 +1,7 @@
 <?php
 namespace Admin\Controller;
-use Think\Controller;
-class RoleController extends Controller 
+
+class RoleController extends BaseController
 {
     public function add()
     {
@@ -19,7 +19,7 @@ class RoleController extends Controller
     		$this->error($model->getError());
     	}
 
-        //获取所有的劝降列表，在添加用户的表单中显示
+        //获取所有的权限列表，在添加用户的表单中显示
         $priModel = D('privilege');
         $priData = $priModel->getTree();
         //var_dump($priData);die;

@@ -21,13 +21,25 @@ create table p39_goods
 	brand_id mediumint unsigned not null default '0' comment '品牌id',
 	cat_id mediumint unsigned not null comment '商品分类',
 	type_id mediumint unsigned not null comment '商品类型',
-	primary key (id),
+	promote_price decimal(10,2) not null default '0.00' comment '促销价格',
+	promote_start_time datetime not null comment '促销开始时间',
+	promote_end_time datetime not null comment '促销结束时间',
+	is_new enum('是','否') not null default '是' commet '是否新品',
+	is_hot enum('是','否') not null default '是' comment '是否是热销产品',
+	is_best enum('是','否') not null default '是' comment '是否精品',
+ 	primary key (id),
 	key shop_price(shop_price),
 	key addtime(addtime),
 	key is_on_sale(is_on_sale),
 	key brand_id(brand_id),
 	key cat_id(cat_id),
-	key type_id(type_id)
+	key type_id(type_id),
+	key promote_price(promote_price),
+	key promote_start_time(promote_start_time),
+	key promote_end_time(promote_end_time),
+	key is_new(is_new),
+	key is_hot(is_hot),
+	key is_best(is_best)
 )engine=InnoDB default charset=utf8 comment '商品表';
 
 drop table if exists p39_brand;
@@ -180,7 +192,7 @@ drop table if exists p39_admin_role;
 create table p39_admin_role
 (
 	role_id mediumint unsigned not null comment '角色id',
-	admin_id mediumint unsigned not null comment '权限id', 
+	admin_id mediumint unsigned not null comment '管理员id', 
 	key admin_id(admin_id),
 	key role_id(role_id)
 )engine=InnoDB default charset=utf8 comment '管理员与角色';

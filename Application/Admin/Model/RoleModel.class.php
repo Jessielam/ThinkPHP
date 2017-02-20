@@ -54,7 +54,7 @@ class RoleModel extends Model
 	{
 		$pri_id = I('post.pri_id');
 		$rpModel = D('role_pri');
-		$epModel->where(array(
+		$rpModel->where(array(
 			'role_id'	=> array('eq',$option['where']['id']),
 		))->delete();
 		foreach($pri_id as $v){

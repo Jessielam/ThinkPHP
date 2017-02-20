@@ -27,6 +27,14 @@
                 </td>
             </tr>
             <tr>
+                <td class="label">角色列表：</td>
+                <td>
+                    <?php foreach($roleData as $k=>$v): ?> 
+                        <input  type="checkbox" name="role_id[]" value="<?php echo $v[id]; ?>" /><?php echo $v['role_name']; ?>
+                    <?php endforeach; ?>
+                </td>
+            </tr>
+            <tr>
                 <td class="label">密码：</td>
                 <td>
                     <input type="password" size="25" name="password" />

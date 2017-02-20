@@ -67,4 +67,68 @@ class PrivilegeModel extends Model
 			return FALSE;
 		}
 	}
+
+	public function chkPri(){
+		//获取当前管理员正要访问的模型名称，控制器名称以及方法名称
+
+		$adminId = session('id');
+		//如果是超级管理员则直接返回TRUE
+		if($adminId==1){
+			return TRUE;
+		}
+
+		$arModel = D('admin_role');
+		$has = $arModel->alias('a')
+		->join('LEFT JOIN __ROLE_PRI__ b ON a.role_id=b.role_id
+			 	LEFT JOIN __PRIVILEGE__ c ON b.pri_id=c.id')
+		->where(array(
+			'a.admin_id' => array('eq',$adminId),
+			'c.module_name'	=> array('eq', MODULE_NAME),
+			'c.controller_name'	=> array('eq', CONTROLLER_NAME),
+			'c.action_name'	=> array('eq', ACTION_NAME),
+		))->count();
+
+		return ($has>0);
+	}
+
+	/**
+	 *
+	 *@return 当前管理员所拥有的前两级的权限
+	 *
+	 */
+	public function getBtns(){
+		/**************先取出当前管理员的所有权限*********/
+		$adminId=session("id");
+
+		if($adminId ==1 ){
+			$priModel = D('Privilege');
+			$priData = $priModel->select();
+		}else{
+			//先取出当前管理员所在的角色，所拥有的权限
+			$arModel = D('admin_role');
+			$priData = $arModel->alias('a')
+			->field('DISTINCT c.id, c.pri_name, c.module_name, c.controller_name, c.action_name, c.parent_id')
+			->join('LEFT JOIN __ROLE_PRI__ b ON a.role_id=b.role_id 
+				 	LEFT JOIN __PRIVILEGE__ c ON b.pri_id=c.id')
+			->where(array(
+				'a.admin_id' => array('eq', $adminId),
+			))->select();
+		}
+
+		//从所有的权限中取出前两级权限
+		$btns = array();
+		foreach($priData as $k=>$v){
+			if($v['parent_id']==0){
+				//找出该顶级的子级
+				foreach($priData as $k1=>$v1){
+					if($v1['parent_id']==$v['id']){
+						$v['children'][]=$v1;
+					}
+				}
+				$btns[] = $v;
+			}
+		}
+		
+		return $btns;
+	}
 }

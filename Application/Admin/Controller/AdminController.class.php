@@ -1,7 +1,7 @@
 <?php
 namespace Admin\Controller;
-use Think\Controller;
-class AdminController extends Controller 
+
+class AdminController extends BaseController 
 {
     public function add()
     {
@@ -19,8 +19,13 @@ class AdminController extends Controller
     		$this->error($model->getError());
     	}
 
+        //获取所有的角色
+        $roleModel = D('role');
+        $roleData = $roleModel->select();
+        //var_dump($roleData);die;
 		// 设置页面中的信息
 		$this->assign(array(
+            'roleData'  => $roleData,
 			'_page_title' => '添加管理员',
 			'_page_btn_name' => '管理员列表',
 			'_page_btn_link' => U('lst'),
@@ -47,8 +52,20 @@ class AdminController extends Controller
     	$data = $model->find($id);
     	$this->assign('data', $data);
 
+        //获取所有的角色
+        $roleModel = D('role');
+        $roleData = $roleModel->select();
+
+        $arModel = D('admin_role');
+        $arData = $arModel->field('GROUP_CONCAT(role_id) role_id')
+            ->where(array(
+                'admin_id' => array('eq', $id),
+            ))->find();
+        //var_dump($arData);die;
 		// 设置页面中的信息
 		$this->assign(array(
+            'roleData'  => $roleData,
+            'arData'    => $arData['role_id'],
 			'_page_title' => '管理员修改',
 			'_page_btn_name' => '管理员列表',
 			'_page_btn_link' => U('lst'),
@@ -72,6 +89,7 @@ class AdminController extends Controller
     {
     	$model = D('Admin');
     	$data = $model->search();
+        //var_dump($data);die;
     	$this->assign(array(
     		'data' => $data['data'],
     		'page' => $data['page'],
