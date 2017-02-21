@@ -161,7 +161,7 @@ class GoodsController extends BaseController {
         //返回数据和翻页
         $data = $model->search();  //在商品模型中添加search方法
         //把对应的数据输出到页面中
-
+        //var_dump($data);die;
         $this->assign($data);
 
         //在lst的分类中添加分类的搜索功能

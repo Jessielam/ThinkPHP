@@ -52,8 +52,8 @@
         </p>
         <p>
             添加时间:
-            从<input type="type" value="<?php echo I('get.fa'); ?>" id="fa" name="fa" size="20"/> 到
-            <input type="type"value="<?php echo I('get.ta'); ?>" id="ta" name="ta" size="20"/>
+            从<input type="text" value="<?php echo I('get.fa'); ?>" id="fa" name="fa" size="20"/> 到
+            <input type="text" value="<?php echo I('get.ta'); ?>" id="ta" name="ta" size="20"/>
         </p>
         <p>
             排　　序:

@@ -24,7 +24,7 @@ create table p39_goods
 	promote_price decimal(10,2) not null default '0.00' comment '促销价格',
 	promote_start_time datetime not null comment '促销开始时间',
 	promote_end_time datetime not null comment '促销结束时间',
-	is_new enum('是','否') not null default '是' commet '是否新品',
+	is_new enum('是','否') not null default '是' comment '是否新品',
 	is_hot enum('是','否') not null default '是' comment '是否是热销产品',
 	is_best enum('是','否') not null default '是' comment '是否精品',
  	primary key (id),

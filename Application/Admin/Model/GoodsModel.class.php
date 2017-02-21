@@ -4,8 +4,8 @@ use Think\Model;
 
 class GoodsModel extends Model{
 	//调用create方法的时候允许接收的字段
-	protected $insertFields = 'goods_name,brand_id,cat_id,market_price,shop_price,is_on_sale,goods_desc,type_id';
-	protected $updateFields = 'id,cat_id,goods_name,brand_id,market_price,shop_price,is_on_sale,goods_desc,type_id';
+	protected $insertFields = 'goods_name,brand_id,cat_id,market_price,shop_price,is_on_sale,goods_desc,type_id,promote_price,promote_start_time,promote_end_time,is_new,is_hot,is_best';
+	protected $updateFields = 'id,cat_id,goods_name,brand_id,market_price,shop_price,is_on_sale,goods_desc,type_id,promote_price,promote_start_time,promote_end_time,is_new,is_hot,is_best';
 	//定义验证规则  1、 1表示一定要验证
 	protected $_validate = array(
 		array('goods_name','require', '商品名称不能为空!', 1),
@@ -362,6 +362,7 @@ class GoodsModel extends Model{
 		->group('a.id')
 		->select();
 
+		//var_dump($data);die;
 		/**********返回数据****************/
 		return array(
 			'data'	=>	$data,  //数据

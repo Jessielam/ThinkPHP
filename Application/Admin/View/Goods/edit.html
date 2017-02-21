@@ -115,6 +115,40 @@
                     </td>
                 </tr>
                 <tr>
+                    <td class="label">促销价格：</td>
+                    <td>
+                        ￥ <input type="text" name="promote_price" value="<?php echo $data['promote_price']; ?>" size="10"/> 元<br /> 
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">促销时间：</td>
+                    <td>
+                        From <input type="text" name="promote_start_time" id="promote_start_time" value="<?php echo $data['promote_start_time']; ?>"/>
+                        To <input type="text" name="promote_end_time" id="promote_end_time" value="<?php echo $data['promote_end_time']; ?>"/> 
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">是否新品：</td>
+                    <td>
+                        <input type="radio" name="is_new" value="是" <?php if($data['is_new']=="是") echo 'checked="checked"'; ?>/> 是
+                        <input type="radio" name="is_new" value="否" <?php if($data['is_new']=="否") echo 'checked="checked"'; ?>/> 否
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">是否热销：</td>
+                    <td>
+                        <input type="radio" name="is_hot" value="是" <?php if($data['is_hot']=="是") echo 'checked="checked"'; ?>/> 是
+                        <input type="radio" name="is_hot" value="否" <?php if($data['is_hot']=="否") echo 'checked="checked"'; ?>/> 否
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">是否精品：</td>
+                    <td>
+                        <input type="radio" name="is_best" value="是" <?php if($data['is_best']=="是") echo 'checked="checked"'; ?>/> 是
+                        <input type="radio" name="is_best" value="否" <?php if($data['is_best']=="否") echo 'checked="checked"'; ?>/> 否
+                    </td>
+                </tr>
+                <tr>
                     <td class="label">是否上架：</td>
                     <td>
                         <input type="radio" name="is_on_sale" value="是" <?php if($data['is_on_sale']=="是") echo 'checked="checked"'; ?> /> 是
