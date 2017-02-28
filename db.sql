@@ -27,7 +27,8 @@ create table p39_goods
 	is_new enum('是','否') not null default '是' comment '是否新品',
 	is_hot enum('是','否') not null default '是' comment '是否是热销产品',
 	is_best enum('是','否') not null default '是' comment '是否精品',
- 	primary key (id),
+	order_num tinyint unsigned not null default '100' comment '排列顺序',
+  	primary key (id),
 	key shop_price(shop_price),
 	key addtime(addtime),
 	key is_on_sale(is_on_sale),
@@ -39,7 +40,8 @@ create table p39_goods
 	key promote_end_time(promote_end_time),
 	key is_new(is_new),
 	key is_hot(is_hot),
-	key is_best(is_best)
+	key is_best(is_best),
+	key order_num(order_num)
 )engine=InnoDB default charset=utf8 comment '商品表';
 
 drop table if exists p39_brand;

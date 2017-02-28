@@ -4,8 +4,8 @@ use Think\Model;
 
 class GoodsModel extends Model{
 	//调用create方法的时候允许接收的字段
-	protected $insertFields = 'goods_name,brand_id,cat_id,market_price,shop_price,is_on_sale,goods_desc,type_id,promote_price,promote_start_time,promote_end_time,is_new,is_hot,is_best';
-	protected $updateFields = 'id,cat_id,goods_name,brand_id,market_price,shop_price,is_on_sale,goods_desc,type_id,promote_price,promote_start_time,promote_end_time,is_new,is_hot,is_best';
+	protected $insertFields = 'goods_name,brand_id,cat_id,market_price,shop_price,is_on_sale,goods_desc,type_id,promote_price,promote_start_time,promote_end_time,is_new,is_hot,is_best,order_num';
+	protected $updateFields = 'id,cat_id,goods_name,brand_id,market_price,shop_price,is_on_sale,goods_desc,type_id,promote_price,promote_start_time,promote_end_time,is_new,is_hot,is_best,order_num';
 	//定义验证规则  1、 1表示一定要验证
 	protected $_validate = array(
 		array('goods_name','require', '商品名称不能为空!', 1),
@@ -457,5 +457,48 @@ class GoodsModel extends Model{
         		}
         	}
         }
+	}
+
+	/**
+	 *  网站首页获取促销产品，默认是取出五件
+	 * 
+	 *	@param $limit  (optional)
+	 *  @return Array
+	 *  @author Homelam  
+	 *  
+	 */
+	public function getPromoteGoods($limit=5){
+		$today = date("Y-m-d H:i");
+		$promoteGoods = $this->field('id, goods_name, promote_price, mid_logo')
+		->where(array(
+			"is_on_sale"	=> array('eq', '是'),
+			"promote_price" => array('gt', 0),
+			'promote_start_time' => array('elt', $today),
+			'promote_end_time'	=> array('egt', $today),
+		))->limit($limit)
+		->order('order_num ASC')
+		->select();
+
+		return $promoteGoods;
+	}
+
+	/**
+	 *  网站首页获取条件产品，默认是取出五件
+	 * 	@param $recType 取出哪一种
+	 *	@param $limit  (optional)
+	 *  @return Array
+	 *  @author Homelam  
+	 *  
+	 */
+	public function getRecGoods($recType, $limit=5){
+		$promoteGoods = $this->field('id, goods_name, shop_price, mid_logo')
+		->where(array(
+			"is_on_sale"	=> array('eq', '是'),
+			"$recType" => array('eq', "是"),
+		))->limit($limit)
+		->order('order_num ASC')
+		->select();
+
+		return $promoteGoods;
 	}
 }		

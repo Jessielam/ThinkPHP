@@ -155,6 +155,12 @@
                         <input type="radio" name="is_on_sale" value="否" <?php if($data['is_on_sale']=="否") echo 'checked="checked"'; ?>/> 否
                     </td>
                 </tr>
+                <tr>
+                    <td class="label">显示排序：</td>
+                    <td>
+                        <input type="text" name="order_num" value="<?php echo $data['order_num']; ?>" size="8"/>
+                    </td>
+                </tr>
             </table>
             <!--商品描述-->
             <table width="100%"  style="display: none;" class="tab_table" align="center">
@@ -251,6 +257,25 @@
         </form>
     </div>
 </div>
+
+<!--获取时间的插件需要引入的文件(基于JQuery的一个包)-->
+<link href="__PUBLIC__/datetimepicker/jquery-ui-1.9.2.custom.min.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" charset="utf-8" src="__PUBLIC__/datetimepicker/jquery-ui-1.9.2.custom.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="__PUBLIC__/datetimepicker/datepicker-zh_cn.js"></script>
+<link rel="stylesheet" media="all" type="text/css" href="__PUBLIC__/datetimepicker/time/jquery-ui-timepicker-addon.min.css" />
+<script type="text/javascript" src="__PUBLIC__/datetimepicker/time/jquery-ui-timepicker-addon.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/datetimepicker/time/i18n/jquery-ui-timepicker-addon-i18n.min.js"></script>
+
+<script type="text/javascript">
+    $.timepicker.setDefaults($.timepicker.regional['zh-CN']);  //定义使用中文
+    //2016-12-28 00:00
+    $("#promote_start_time").datetimepicker();
+    $("#promote_end_time").datetimepicker();
+
+    //或者是：(没有时和分的显示) 2016-12-01
+    //$("#fa").datepicker({ dateFormat: "yy-mm-dd" });
+    //$("#ta").datepicker({ dateFormat: "yy-mm-dd" });
+</script>
 
 <!--在线编辑器引入的js文件以及css文件-->
 <link href="__PUBLIC__/umeditor1_2_2-utf8-php/themes/default/css/umeditor.css" type="text/css" rel="stylesheet">
