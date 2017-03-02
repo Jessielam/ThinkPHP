@@ -3,7 +3,7 @@ namespace Admin\Model;
 use Think\Model;
 class AdminModel extends Model 
 {
-	protected $insertFields = array('username','password','cpassword','captcha');
+	protected $insertFields = array('username','password','cpassword','chkcode');
 	protected $updateFields = array('id','username','password','cpassword');
 	//添加和修改管理员的
 	protected $_validate = array(
@@ -13,31 +13,26 @@ class AdminModel extends Model
 		array('password', 'require', '密码不能为空！', 1, 'regex', 1),
 		array('cpassword', 'password', '密码必须一致！', 1, 'confirm',3),
 	);
-
 	//为登录表当制作一个验证规则
 	public $_login_validate = array(
 		array('username','require','用户名不能为空！',1),
 		array('password','require','密码不能为空！',1),
-		array('captcha','require','验证码不能为空！',1),
-		array('captcha','check_verify','验证码错误！',1,'callback'),
+		array('chkcode','require','验证码不能为空！',1),
+		array('chkcode','check_verify','验证码错误！',1,'callback'),
 	);
-
 	//验证输入的验证码是否正确
 	function check_verify($code, $id=''){
 		$verify = new \Think\Verify();
 		return $verify->check($code, $id);
 	}
-
 	public function login(){
 		//从模型中获取登录的用户名和密码
 		$username = $this->username;
 		$password = $this->password;
-
 		//先查询这个用户名和密码是否存在
 		$user = $this->where(array(
 			'username'	=>	array('eq', $username),
 		))->find();
-
 		if($user){
 			//如果用户名和密码都相同的
 			if($user['password']==md5($password)){
@@ -54,13 +49,11 @@ class AdminModel extends Model
 			return FALSE;
 		}
 	}
-
 	//退出登录
 	public function logout(){
 		//把登录的session信息清除
 		session(null);
 	}
-
 	public function search($pageSize = 20)
 	{
 		/**************************************** 搜索 ****************************************/
@@ -94,7 +87,6 @@ class AdminModel extends Model
 		//把该管理员的角色id插入到片p39_admin_role表中
 		$roleId = I('post.role_id');
 		$arModel = D('admin_role');
-
 		foreach($roleId as $k=>$v){
 			$arModel->add(array(
 				'admin_id'	=> $data['id'],
@@ -111,7 +103,6 @@ class AdminModel extends Model
 		$arModel->where(array(
 			'admin_id'	=> array('eq', $option['where']['id']),
 		))->delete();
-
 		foreach($roleId as $k=>$v){
 			$arModel->add(array(
 				'admin_id'	=> $option['where']['id'],

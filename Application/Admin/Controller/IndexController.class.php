@@ -1,20 +1,22 @@
 <?php
 namespace Admin\Controller;
-
-class IndexController extends BaseController {
-    public function index(){
+class IndexController extends BaseController 
+{
+    public function index()
+    {
     	$this->display();
     }
-
-    public function top(){
+    public function top()
+    {
     	$this->display();
     }
-
-     public function menu(){
+    public function menu()
+    {
     	$this->display();
     }
-
-     public function main(){
+    public function main()
+    {
     	$this->display();
     }
+    
 }

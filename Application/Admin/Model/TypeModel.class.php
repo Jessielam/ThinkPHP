@@ -8,13 +8,12 @@ class TypeModel extends Model
 	protected $_validate = array(
 		array('type_name', 'require', '类型名称不能为空！', 1, 'regex', 3),
 		array('type_name', '1,30', '类型名称的值最长不能超过 30 个字符！', 1, 'length', 3),
+		array('type_name', '', '类型名称已经存在！', 1, 'unique', 3),
 	);
 	public function search($pageSize = 20)
 	{
 		/**************************************** 搜索 ****************************************/
 		$where = array();
-		if($type_name = I('get.type_name'))
-			$where['type_name'] = array('like', "%$type_name%");
 		/************************************* 翻页 ****************************************/
 		$count = $this->alias('a')->where($where)->count();
 		$page = new \Think\Page($count, $pageSize);
@@ -37,11 +36,10 @@ class TypeModel extends Model
 	// 删除前
 	protected function _before_delete($option)
 	{
-		if(is_array($option['where']['id']))
-		{
-			$this->error = '不支持批量删除';
-			return FALSE;
-		}
+		$attrModel = D('Attribute');
+		$attrModel->where(array(
+			'type_id' => array('eq', $option['where']['id']),
+		))->delete();
 	}
 	/************************************ 其他方法 ********************************************/
 }

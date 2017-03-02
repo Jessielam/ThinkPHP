@@ -1,6 +1,5 @@
 <?php
 namespace Admin\Controller;
-
 class BrandController extends BaseController 
 {
     public function add()

@@ -2,7 +2,7 @@
 	<div class="header w1210 bc mt15">
 		<!-- 头部上半部分 start 包括 logo、搜索、用户中心和购物车结算 -->
 		<div class="logo w1210">
-			<h1 class="fl"><a href="index.html"><img src="__PUBLIC__/Home/Images/logo.png" alt="京西商城"></a></h1>
+			<h1 class="fl"><a href="index.html"><img src="__PUBLIC__/Home/images/logo.png" alt="京西商城"></a></h1>
 			<!-- 头部搜索 start -->
 			<div class="search fl">
 				<div class="search_form">
@@ -57,9 +57,9 @@
 						<div class="viewlist mt10">
 							<h3>最近浏览的商品：</h3>
 							<ul>
-								<li><a href=""><img src="__PUBLIC__/Home/Images/view_list1.jpg" alt="" /></a></li>
-								<li><a href=""><img src="__PUBLIC__/Home/Images/view_list2.jpg" alt="" /></a></li>
-								<li><a href=""><img src="__PUBLIC__/Home/Images/view_list3.jpg" alt="" /></a></li>
+								<li><a href=""><img src="__PUBLIC__/Home/images/view_list1.jpg" alt="" /></a></li>
+								<li><a href=""><img src="__PUBLIC__/Home/images/view_list2.jpg" alt="" /></a></li>
+								<li><a href=""><img src="__PUBLIC__/Home/images/view_list3.jpg" alt="" /></a></li>
 							</ul>
 						</div>
 					</dd>
@@ -90,29 +90,30 @@
 		<!-- 导航条部分 start -->
 		<div class="nav w1210 bc mt10">
 			<!--  商品分类部分 start-->
-			<div class="category fl <?php if($_show_nav==0) echo 'cat1';?>"> <!-- 非首页，需要添加cat1类 -->
-				<div class="cat_hd <?php if($_show_nav==0) echo 'off';?>">  <!-- 注意，首页在此div上只需要添加cat_hd类，非首页，默认收缩分类时添加上off类，鼠标滑过时展开菜单则将off类换成on类 -->
+			<div class="category fl <?php if($_show_nav == 0) echo 'cat1'; ?>">
+				<div class="cat_hd <?php if($_show_nav == 0) echo 'off'; ?>">  <!-- 注意，首页在此div上只需要添加cat_hd类，非首页，默认收缩分类时添加上off类，并将cat_bd设置为不显示(加上类none即可)，鼠标滑过时展开菜单则将off类换成on类 -->
 					<h2>全部商品分类</h2>
 					<em></em>
 				</div>
 				
-				<div class="cat_bd <?php if($_show_nav==0) echo 'none';?>">
-					<?php foreach($catData as $k=>$v): ?>
-						<div class="cat <?php if($k==0) echo 'item1';?>">
-							<h3><a href=""><?php echo $v['cat_name']; ?></a> <b></b></h3>
-							<div class="cat_detail none">
-							<?php foreach($v['children'] as $k1=>$v1): ?>
-								<dl <?php if($k1==0) echo 'class="dl_1st"';?>>
-									<dt><a href=""><?php echo $v1['cat_name']; ?></a></dt>
-									<dd>
-										<?php foreach($v1['children'] as $k2=>$v2): ?>
-										<a href=""><?php echo $v2['cat_name']; ?></a>
-										<?php endforeach; ?>						
-									</dd>
-								</dl>
+				<div class="cat_bd <?php if($_show_nav == 0) echo 'none'; ?>"> 
+					<!-- 循环输出三层分类数据 -->
+					<?php foreach ($catData as $k => $v): ?>
+					<div class="cat <?php if($k==0) echo 'item1'; ?>">
+						<h3><a href=""><?php echo $v['cat_name'];?></a> <b></b></h3>
+						<div class="cat_detail none">
+							<?php foreach ($v['children'] as $k1 => $v1): ?>
+							<dl <?php if($k1==0) echo 'class="dl_1st"'; ?>>
+								<dt><a href=""><?php echo $v1['cat_name'];?></a></dt>
+								<dd>
+									<?php foreach ($v1['children'] as $k2 => $v2): ?>
+									<a href=""><?php echo $v2['cat_name'];?></a>
+									<?php endforeach; ?>					
+								</dd>
+							</dl>
 							<?php endforeach; ?>
-							</div>
 						</div>
+					</div>
 					<?php endforeach; ?>
 				</div>
 
@@ -135,3 +136,5 @@
 		<!-- 导航条部分 end -->
 	</div>
 	<!-- 头部 end-->
+
+	<div style="clear:both;"></div>

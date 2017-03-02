@@ -124,22 +124,16 @@ body {
     <div id="menu-list">
         <ul id="menu-ul">
         <?php
- $priModel = D('privilege'); $btns = $priModel->getBtns(); foreach($btns as $k=>$v): ?>
-          <li class="explode" key="02_cat_and_goods" name="menu">
-          <?php echo $v['pri_name']; ?>
-              <ul>
-                <?php foreach($v['children'] as $k1=>$v1): ?>
-                  <li class="menu-item"><a href="<?php echo U($v1['controller_name'].'/'.$v1['action_name']); ?>" target="main-frame"><?php echo $v1['pri_name']; ?></a></li>
-                <?php endforeach; ?>
-              </ul>
-          </li>
-        <?php endforeach; ?>
-            <li class="explode" key="08_members" name="menu">
-            Gii
+ $priModel = D('privilege'); $btns = $priModel->getBtns(); foreach ($btns as $k => $v): ?>
+            <li class="explode" key="02_cat_and_goods" name="menu">
+            <?php echo $v['pri_name']; ?>
                 <ul>
-                    <li class="menu-item"><a href="<?php echo U('./Gii/index'); ?>" target="main-frame">Gii代码生成</a></li>
+                	<?php foreach ($v['children'] as $k1 => $v1): ?>
+                    <li class="menu-item"><a href="<?php echo U($v1['module_name'].'/'.$v1['controller_name'].'/'.$v1['action_name']); ?>" target="main-frame"><?php echo $v1['pri_name']; ?></a></li>
+					<?php endforeach; ?>
                 </ul>
             </li>
+  		<?php endforeach; ?>
         </ul>
     </div>
     <div id="help-div" style="display:none">

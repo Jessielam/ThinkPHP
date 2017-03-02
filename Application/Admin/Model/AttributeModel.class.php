@@ -10,7 +10,7 @@ class AttributeModel extends Model
 		array('attr_name', '1,30', '属性名称的值最长不能超过 30 个字符！', 1, 'length', 3),
 		array('attr_type', 'require', '属性类型不能为空！', 1, 'regex', 3),
 		array('attr_type', '唯一,可选', "属性类型的值只能是在 '唯一,可选' 中的一个值！", 1, 'in', 3),
-		array('attr_option_values', '1,100', '属性可选值的值最长不能超过 100 个字符！', 2, 'length', 3),
+		array('attr_option_values', '1,300', '属性可选值的值最长不能超过 300 个字符！', 2, 'length', 3),
 		array('type_id', 'require', '所属类型Id不能为空！', 1, 'regex', 3),
 		array('type_id', 'number', '所属类型Id必须是一个整数！', 1, 'regex', 3),
 	);
@@ -32,28 +32,19 @@ class AttributeModel extends Model
 		$page->setConfig('prev', '上一页');
 		$page->setConfig('next', '下一页');
 		$data['page'] = $page->show();
-
 		/************************************** 取数据 ******************************************/
-		$data['data'] = $this->alias('a')->field('a.*, b.type_name')->where($where)
-			->join('LEFT JOIN __TYPE__ b ON a.type_id=b.id')
-			->group('a.id')
-			->limit($page->firstRow.','.$page->listRows)
-			->select();
+		$data['data'] = $this->alias('a')->where($where)->group('a.id')->limit($page->firstRow.','.$page->listRows)->select();
 		return $data;
 	}
 	// 添加前
 	protected function _before_insert(&$data, $option)
 	{
-		//添加前把属性值进行处理
-		//如果是可选属性，把对应的逗号都编程英文的逗号
-		$data['attr_option_values'] = str_replace('，',',',$data['attr_option_values']);
+		// 把中文 逗号换成英文的
+		$data['attr_option_values'] = str_replace('，', ',', $data['attr_option_values']);
 	}
 	// 修改前
 	protected function _before_update(&$data, $option)
 	{
-		//添加前把属性值进行处理
-		//如果是可选属性，把对应的逗号都编程英文的逗号
-		$data['attr_option_values'] = str_replace('，',',',$data['attr_option_values']);
 	}
 	// 删除前
 	protected function _before_delete($option)

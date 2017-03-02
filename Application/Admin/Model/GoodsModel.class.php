@@ -1,504 +1,469 @@
 <?php
 namespace Admin\Model;
 use Think\Model;
-
-class GoodsModel extends Model{
-	//调用create方法的时候允许接收的字段
-	protected $insertFields = 'goods_name,brand_id,cat_id,market_price,shop_price,is_on_sale,goods_desc,type_id,promote_price,promote_start_time,promote_end_time,is_new,is_hot,is_best,order_num,is_floor';
-	protected $updateFields = 'id,cat_id,goods_name,brand_id,market_price,shop_price,is_on_sale,goods_desc,type_id,promote_price,promote_start_time,promote_end_time,is_new,is_hot,is_best,order_num,is_floor';
-	//定义验证规则  1、 1表示一定要验证
+class GoodsModel extends Model 
+{
+	// 添加时调用create方法允许接收的字段
+	protected $insertFields = 'goods_name,market_price,shop_price,is_on_sale,goods_desc,brand_id,cat_id,type_id';
+	// 修改时调用create方法允许接收的字段
+	protected $updateFields = 'id,goods_name,market_price,shop_price,is_on_sale,goods_desc,brand_id,cat_id,type_id';
+	//定义验证规则
 	protected $_validate = array(
-		array('goods_name','require', '商品名称不能为空!', 1),
-		array('cat_id','require', '商品必须从属一个主分类!', 1),
-		array('market_price','currency', '市场价格必须是一个货币类型！', 1),
-		array('shop_price','currency', '本店价格必须是一个货币类型！', 1),
+		array('cat_id', 'require', '必须选择主分类！', 1),
+		array('goods_name', 'require', '商品名称不能为空！', 1),
+		array('market_price', 'currency', '市场价格必须是货币类型！', 1),
+		array('shop_price', 'currency', '本店价格必须是货币类型！', 1),
 	);
-
-	public function getGoodsIdByCatId($cat_id){
-		//获取主分类
-		$catModel = D('Admin/category');
-		//获取该分类id下的所有子分类
-		$children = $catModel->getChildren($cat_id);
-		//把自己也加进去进行查找
-		$children[] = $cat_id;
-
-		//获取主分类的id
-		$gids = $this->field('id')->where(array(
-			'cat_id'	=> array('in', $children),	
-		))->select();
-
-		//获取扩展分类的ids
-		$exModel = D('goods_cat');
-		$gids1 = $exModel->field('DISTINCT goods_id id')
-			->where(array(
-				'cat_id'	=>	array('in', $children),
-			))->select();
-
-		//将两个获取的分类进行合并，得到的是一个二维数组
-		if($gids&&$gids1){
-			$gids = array_merge($gids, $gids1);
-		}elseif($gids1){
-			$gids = $gids1;
-		}
-
-		foreach($gids as $k=>$v){
-			if(!in_array($v['id'],$id)){
-				$id[] = $v['id'];
-			}
-		}
-
-		return $id;
-
-	}
-
-	//thinkphp 提供一套方法（钩子方法）
-
-	//数据插入数据库之前 ,第一个参数须是引用传递
-	//按引用传递，函数内部想要修改函数外部的数据必须是按引用传递
-	protected function _before_insert(&$data, $option){
-		//获取当前时间
-		$data['addtime'] = date('Y-m-d H:i:s', time());
-
-		//如果使用在线编辑器的话,这个字段需要特殊过滤
-		$data['goods_desc'] = removeXSS($_POST['goods_desc']);
-		/***************在数据插入数据库之前，先处理logo*****************/
-		//1、判断用户有没有上传图片
-		if($_FILES['logo']['error']==0)
+	
+	// 这个方法在添加之前会自动被调用 --》 钩子方法
+	// 第一个参数：表单中即将要插入到数据库中的数据->数组
+	// &按引用传递：函数内部要修改函数外部传进来的变量必须按钮引用传递，除非传递的是一个对象,因为对象默认是按引用传递的
+	protected function _before_insert(&$data, $option)
+	{
+		/**************** 处理LOGO *******************/
+		// 判断有没有选择图片
+		if($_FILES['logo']['error'] == 0)
 		{
-			$ret = uploadOne('logo','Goods', 	array(
+			$ret = uploadOne('logo', 'Goods', array(
 				array(700, 700),
 				array(350, 350),
 				array(130, 130),
 				array(50, 50),
 			));
-			if($ret['ok'] == 1){
-				/********把对应的路径保存到数据库中 ************/
-				$data['logo'] = $ret['images'][0];
-				$data['sm_logo'] = $ret['images'][4];
-				$data['mid_logo'] = $ret['images'][3];
-				$data['big_logo'] = $ret['images'][2];
-				$data['mbig_logo'] = $ret['images'][1];
-			}
+			$data['logo'] = $ret['images'][0];
+			$data['mbig_logo'] = $ret['images'][1];
+			$data['big_logo'] = $ret['images'][2];
+			$data['mid_logo'] = $ret['images'][3];
+			$data['sm_logo'] = $ret['images'][4];
 		}
+		// 获取当前时间并添加到表单中这样就会插入到数据库中
+		$data['addtime'] = date('Y-m-d H:i:s', time());
+		// 我们自己来过滤这个字段
+		$data['goods_desc'] = removeXSS($_POST['goods_desc']);
 	}
-
-	protected function _before_update(&$data, $option){
-
-		$id = $option['where']['id'];  //需要修改商品的ID
-
-		/************修改商品属性**************/
-		//有就更新，没有就添加
-		$gaId = I('post.goods_attr_id');
+	
+	protected function _before_update(&$data, $option)
+	{
+		$id = $option['where']['id'];  // 要修改的商品的ID
+		/************ 修改商品属性 *****************/
+		$gaid = I('post.goods_attr_id');
 		$attrValue = I('post.attr_value');
 		$gaModel = D('goods_attr');
-		$_i = 0;			//循环次数
-		foreach($attrValue as $k=>$v){
-			foreach($v as $k1=>$v1){
-				if($gaId[$_i]==''){
+		$_i = 0;  // 循环次数
+		foreach ($attrValue as $k => $v)
+		{
+			foreach ($v as $k1 => $v1)
+			{
+				// 这个replace into可以实现同样的功能
+				// replace into ：如果记录存在就修改，记录不存在就添加。以主键字段来判断一条记录是否存在
+				//$gaModel->execute('REPLACE INTO p39_goods_attr VALUES("'.$gaid[$_i].'","'.$v1.'","'.$k.'","'.$id.'")');
+				// 找这个属性值是否有id
+				
+				if($gaid[$_i] == '')
 					$gaModel->add(array(
-						'goods_id'	=> $id,
-						'attr_id'	=> $k,
-						'attr_value'=> $v1
+						'goods_id' => $id,
+						'attr_id' => $k,
+						'attr_value' => $v1,
 					));
-				}else{
+				else 
 					$gaModel->where(array(
-						'id' => array('eq',$gaId[$_i]),
+						'id' => array('eq', $gaid[$_i]),
 					))->setField('attr_value', $v1);
-				}
+				
 				$_i++;
 			}
 		}
-
-		//修改商品的扩展分类
-		$gcModel = D('goods_cat');
-		//先把原先的扩展分类删除
-		$gcModel->where(array(
-				'goods_id'=> array('eq',$id),
-			))->delete();
-
+		
+		/************ 处理扩展分类 ***************/
 		$ecid = I('post.ext_cat_id');
-		//如果有扩展分类
-		if($ecid){
-			$gcModel = D('goods_cat');
-			foreach($ecid as $k=>$v){
-				if(empty($v)){
-					continue;
-				}
+		$gcModel = D('goods_cat');
+		// 先删除原分类数据
+		$gcModel->where(array(
+			'goods_id' => array('eq', $id),
+		))->delete();
+		if($ecid)
+		{
+			// 去重
+			$ecid = array_unique($ecid);
+			foreach ($ecid as $k => $v)
+			{
+				if(empty($v))
+					continue ;
 				$gcModel->add(array(
-					'cat_id'	=>	$v,
-					'goods_id'	=>  $id,
+					'cat_id' => $v,
+					'goods_id' => $id,
 				));
 			}
 		}
-
-
-
-		//如果使用在线编辑器的话,这个字段需要特殊过滤
-		$data['goods_desc'] = removeXSS($_POST['goods_desc']);
-		/***************在数据插入数据库之前，先处理logo*****************/
-		//1、判断用户有没有上传图片
-		if($_FILES['logo']['error']==0)
+		/**************** 处理LOGO *******************/
+		// 判断有没有选择图片
+		if($_FILES['logo']['error'] == 0)
 		{
-			$ret = uploadOne('logo','Goods',array(
-				array(700,700),
+			$ret = uploadOne('logo', 'Goods', array(
+				array(700, 700),
 				array(350, 350),
 				array(130, 130),
 				array(50, 50),
 			));
-			if($ret['ok'] == 1){
-				/********把对应的路径保存到数据库中 ************/
-				$data['logo'] = $ret['images'][0];
-				$data['sm_logo'] = $ret['images'][4];
-				$data['mid_logo'] = $ret['images'][3];
-				$data['big_logo'] = $ret['images'][2];
-				$data['mbig_logo'] = $ret['images'][1];
-			}
-
-			/************把原来的图片给删除******************/
-			//1、先找出对应图片的路径信息
-			$oldlogo = $this->field('logo,sm_logo,mid_logo,big_logo,mbig_logo')->find($id);
-			deleteImage($oldlogo);
+			$data['logo'] = $ret['images'][0];
+			$data['mbig_logo'] = $ret['images'][1];
+			$data['big_logo'] = $ret['images'][2];
+			$data['mid_logo'] = $ret['images'][3];
+			$data['sm_logo'] = $ret['images'][4];
+			/*************** 删除原来的图片 *******************/
+		    	// 先查询出原来图片的路径
+			$oldLogo = $this->field('logo,mbig_logo,big_logo,mid_logo,sm_logo')->find($id);
+			deleteImage($oldLogo);
 		}
-
-		//处理商品相册上传的图片
-		if(isset($_FILES['pic'])){
-	        $pics = array();
-	        foreach($_FILES['pic']['name'] as $k=>$v){
-	            $pics[] = array(
-	                'name'  =>  $v,
-	                'type'  =>  $_FILES['pic']['type'][$k],
-	                'tmp_name'  =>  $_FILES['pic']['tmp_name'][$k],
-	                'error' =>  $_FILES['pic']['error'][$k],
-	                'size'  =>  $_FILES['pic']['size'][$k],   
-	            );
-	        }
-	    }
-	    //把处理好的数组传给$_FILES,因为uploadOne 是到$_FIELS中获取数据的
-	    $_FILES = $pics;
-	    //实例化模型
-        $picModel = D('goods_pic');
-
-        //循环调用uploadOne函数进行函数的上传
-        foreach($pics as $k=>$v){
-        	if($v['error']==0){
-        		$rets = uploadOne($k, 'Goods', array(
-        			array(50,50),
-        			array(350,350),
-        			array(700,700),
-        		));
-
-        		if($rets['ok']==1){
-        			$picModel->add(array(
-        				'pic'	=>	$rets['images'][0],
-        				'sm_pic'	=>	$rets['images'][1],
-        				'mid_pic'	=>	$rets['images'][2],
-        				'big_pic'	=>	$rets['images'][3],
-        				'goods_id'	=>	$id,
-        			));
-        		}
-        	}
-        }
-
-		//更新之前先把原来的会员价格给删除
-		$mpModel = D('member_price');
-		$mpModel->where(array(
-			'goods_id'	=>	array('eq', $id),
-		))->delete();
-
-		//获取提交的会员价格
-		$memberPrice = I('post.member_price');
-
-		foreach($memberPrice as $k=>$v){
-			$_v = (float)$v;
-			//如果设置了就把对应的会员价格插入数据表中
-			if($_v>0){
-				$mpModel->add(array(
-					'price'		=>	$v,
-					'level_id'	=>	$k,
-					'goods_id'	=>	$id,	
-				));
-			}
-		}
-	}
-
-	//第三个钩子函数 删除之前,删除商品之前把对应的图片也给删除了
-	protected function _before_delete($option){
-		$id = $option['where']['id'];	//要删除商品的id
-
-		//在商品删除之前，先把商品的属性库存量也一并删除
-		$gnModel = D('goods_number');
-		$gnModel->where(array('goods_id'=>array('eq',$id),))->delete();
-
-		//在商品删除之前不对应的商品属性也给删除
-		$gaModel = D('goods_attr');
-		$gaModel->where(array(
-			'goods_id'	=>	array('eq',$id),
-		))->delete();
-
-		//在商品删除之前，把对应的扩展分类也删除
-		$gcModel = D('goods_cat');
-		$gcModel->where(array(
-				'goods_id'	=> array('eq', $id),
-			))->delete();
-		//删除商品的时候把对应的商品的商品相册也给删除
-
-		$gpModel = D('goods_pic');
-		$pics = $gpModel->field('pic,sm_pic,mid_pic,big_pic')->where(array(
-					'goods_id'	=>	array('eq',$id)
-				))->select();
 		
-		foreach($pics as $k=>$v){
-			deleteImage($v);
-			$gpModel->where(array(
-				'goods_id' => array('eq',$id)
-			))->delete();
-		}
-
-		/************把原来的图片给删除******************/
-		//1、先找出对应图片的路径信息
-		$oldlogo = $this->field('logo,sm_logo,mid_logo,big_logo,mbig_logo')->find($id);
-		
-		deleteImage($oldlogo);
-
-		//删除该商品的时候把对应的会员价格删除
-		$mpModel = D('member_price');
-		$mpModel->where(array(
-			'goods_id'	=> array('eq',$id),
-		))->delete();
-
-	}
-
-	//自定义一个search方法
-
-	/**
-	 *	$perpage 每页显示多少条记录
-	 *
-	 *
-	**/
-	public function search($perpage=10){
-
-		/************搜索**********/
-		//1、获取搜索表单提交的参数
-		$gn = I('get.gn');  //搜索商品名称
-		if($gn){
-			//如果搜索商品名不为空，则拼凑where条件
-			$where['goods_name'] = array('like', "%$gn%"); //WHERE goods_name LIKE '%$gn%'
-		}
-
-		$brandId = I('get.brand_id');
-		if($brandId){
-			$where['brand_id'] = array('eq', $brandId); 
-		}
-
-		//搜索商品价格
-		$fp = I('get.fp');
-		$tp = I('get.tp');
-		if( $fp&&$tp ){
-			$where['shop_price'] = array('between', array($fp, $tp)); //WHERE shop_price BETWEEN $fp AND $tp;
-		}elseif($fp){
-			$where['shop_price'] = array('egt', $fp); //WHERE shop_price >= $fp ;
-		}elseif($tp){
-			$where['shop_price'] = array('elt', $tp); //WHERE shop_price <= $tp;
-		}
-
-		//搜索添加时间
-		$fa = I('get.fa');
-		$ta = I('get.ta');
-		if( $fp&&$tp ){
-			$where['addtime'] = array('between', array($fa, $ta)); //WHERE addtime BETWEEN $fa AND ta;
-		}elseif($fa){
-			$where['addtime'] = array('egt', $fa); //WHERE addtime >= $fa ;
-		}elseif($ta){
-			$where['addtime'] = array('elt', $ta); //WHERE time <= $ta;
-		}
-		//搜索是否上架
-		$ios = I('get.ios');
-		if($ios){
-			$where['is_on_sale'] = array('eq', $ios);
-		}
-
-		/***********排序*****************/
-		$orderby = 'id';  //默认的排序方式
-		$orderway = 'desc';
-		$odby = I('get.orderby');
-		if($odby){
-			if($odby=="id_asc"){
-				$orderway = 'asc';
-			}elseif($odby=="price_desc"){
-				$orderby = 'shop_price';
-			}elseif($odby=="price_asc"){
-				$orderby = 'shop_price';
-				$orderway = 'asc';
+		/************ 处理相册图片 *****************/
+		if(isset($_FILES['pic']))
+		{
+			$pics = array();
+			foreach ($_FILES['pic']['name'] as $k => $v)
+			{
+				$pics[] = array(
+					'name' => $v,
+					'type' => $_FILES['pic']['type'][$k],
+					'tmp_name' => $_FILES['pic']['tmp_name'][$k],
+					'error' => $_FILES['pic']['error'][$k],
+					'size' => $_FILES['pic']['size'][$k],
+				);
 			}
-		}
-
-		/**************分类*********/
-		$catId = I('get.cat_id');
-		if($catId){
-			//从主分类和扩展分类取出要查询的商品ids
-			$ids = $this->getGoodsIdByCatId($catId);
-			$where['a.id'] = array('in', $ids);
-		}
-
-		/************翻页**********/
-		//1、先取出总的记录
-		$count = $this->where($where)->count();// 查询满足要求的总记录数
-
-		$pageObj  = new \Think\Page($count, $perpage);// 实例化分页类 传入总记录数和每页显示的记录数
-		$pageObj->setConfig('prev', '上一页');
-		$pageObj->setConfig('next', '下一页');
-		$pageString  = $pageObj->show();// 分页显示输出
-
-		/**********取出对应的数据记录************/
-		$data = $this->order("$orderby $orderway")
-		->alias('a')
-		->field('a.*, b.brand_name, c.cat_name, GROUP_CONCAT(e.cat_name) ext_cat_name')
-		->join('LEFT JOIN __BRAND__ b ON b.id=a.brand_id
-				LEFT JOIN __CATEGORY__ c ON a.cat_id=c.id
-				LEFT JOIN __GOODS_CAT__ d ON a.id=d.goods_id
-				LEFT JOIN __CATEGORY__  e on e.id=d.cat_id')
-		->where($where)
-		->limit($pageObj->firstRow.','.$pageObj->listRows)
-		->group('a.id')
-		->select();
-
-		//var_dump($data);die;
-		/**********返回数据****************/
-		return array(
-			'data'	=>	$data,  //数据
-			'page'	=>	$pageString,   //翻页字符串
-		);
-	}
-
-	/**********数据插入数据库会执行以下的钩子方法*********/
-	protected function _after_insert($data, $option){
-
-		/******************* 处理商品属性的添加***************/
-		$attrValue= I('post.attr_value');
-		$gaModel = D('goods_attr');
-		foreach($attrValue as $k=>$v){
-			//把属性的数组去重
-			$v = array_unique($v);
-			foreach($v as $k1=>$v1){
-				$gaModel->add(array(
-					'attr_id'	=>	$k,
-					'attr_value'	=>	$v1,
-					'goods_id'	=>	$data['id'],
-				));
-			}
-		}
-
-		/*********************处理扩展分类********************/
-		//获取提交的分类id (数组)
-		$ecid = I('post.ext_cat_id');
-		//如果有扩展分类
-		if($ecid){
-			$gcModel = D('goods_cat');
-			foreach($ecid as $k=>$v){
-				if(empty($v)){
-					continue;
+			$_FILES = $pics;  // 把处理好的数组赋给$_FILES，因为uploadOne函数是到$_FILES中找图片
+			$gpModel = D('goods_pic');
+			// 循环每个上传
+			foreach ($pics as $k => $v)
+			{
+				if($v['error'] == 0)
+				{
+					$ret = uploadOne($k, 'Goods', array(
+						array(650, 650),
+						array(350, 350),
+						array(50, 50),
+					));
+					if($ret['ok'] == 1)
+					{
+						$gpModel->add(array(
+							'pic' => $ret['images'][0],
+							'big_pic' => $ret['images'][1],
+							'mid_pic' => $ret['images'][2],
+							'sm_pic' => $ret['images'][3],
+							'goods_id' => $id,
+						));
+					}
 				}
-				$gcModel->add(array(
-					'cat_id'	=>	$v,
-					'goods_id'	=>	$data['id'],
-				));
 			}
 		}
-
+		
+		/************ 处理会员价格 ****************/
 		$mp = I('post.member_price');
 		$mpModel = D('member_price');
-
-		foreach($mp as $k=>$v){
+		// 先删除原来的会员价格
+		$mpModel->where(array(
+			'goods_id' => array('eq', $id),
+		))->delete();
+		foreach ($mp as $k => $v)
+		{
 			$_v = (float)$v;
-			if($_v>0){
+			// 如果设置了会员价格就插入到表中
+			if($_v > 0)
+			{
 				$mpModel->add(array(
-					'price'		=>	$v,
-					'level_id'	=>	$k,
-					'goods_id'	=>	$data['id'],	
+					'price' => $_v,
+					'level_id' => $k,
+					'goods_id' => $id,
 				));
 			}
 		}
-
-		//处理商品相册上传的图片
-		if(isset($_FILES['pic'])){
-	        $pics = array();
-	        foreach($_FILES['pic']['name'] as $k=>$v){
-	            $pics[] = array(
-	                'name'  =>  $v,
-	                'type'  =>  $_FILES['pic']['type'][$k],
-	                'tmp_name'  =>  $_FILES['pic']['tmp_name'][$k],
-	                'error' =>  $_FILES['pic']['error'][$k],
-	                'size'  =>  $_FILES['pic']['size'][$k],   
-	            );
-	        }
-	    }
-	    //把处理好的数组传给$_FILES,因为uploadOne 是到$_FIELS中获取数据的
-	    $_FILES = $pics;
-	    //实例化模型
-        $picModel = D('goods_pic');
-
-        //循环调用uploadOne函数进行函数的上传
-        foreach($pics as $k=>$v){
-        	if($v['error']==0){
-        		$ret = uploadOne($k, 'Goods', array(
-        			array(50,50),
-        			array(350,350),
-        			array(700,700),
-        		));
-
-        		if($ret['ok']==1){
-        			$picModel->add(array(
-        				'pic'	=>	$ret['images'][0],
-        				'sm_pic'	=>	$ret['images'][1],
-        				'mid_pic'	=>	$ret['images'][2],
-        				'big_pic'	=>	$ret['images'][3],
-        				'goods_id'	=>	$data['id'],
-        			));
-        		}
-        	}
-        }
+		
+		// 我们自己来过滤这个字段
+		$data['goods_desc'] = removeXSS($_POST['goods_desc']);
 	}
-
+	
+	protected function _before_delete($option)
+	{
+		$id = $option['where']['id'];   // 要删除的商品的ID
+		
+		/*********** 删除商品库存量 ***************/
+		$gnModel = D('goods_number');
+		$gnModel->where(array(
+			'goods_id' => array('eq', $id),
+		))->delete();
+		/************* 删除商品属性 ******************/
+		$gaModel = D('goods_attr');
+		$gaModel->where(array(
+			'goods_id' => array('eq', $id),
+		))->delete();
+		/************* 删除扩展分类 ******************/
+		$gcModel = D('goods_cat');
+		$gcModel->where(array(
+			'goods_id' => array('eq', $id),
+		))->delete();
+		/************** 删除相册中的图片 ********************/
+		// 先从相册表中取出相册所在硬盘的路径
+		$gpModel = D('goods_pic');
+		$pics = $gpModel->field('pic,sm_pic,mid_pic,big_pic')->where(array(
+			'goods_id' => array('eq', $id),
+		))->select();
+		// 循环每个图片从硬盘上删除图片
+		foreach ($pics as $k => $v)
+			deleteImage($v);  //删除pic,sm_pic,mid_pic,big_pic四张
+		// 从数据库中把记录删除
+		$gpModel->where(array(
+			'goods_id' => array('eq', $id),
+		))->delete();
+		/*************** 删除原来的图片 *******************/
+		// 先查询出原来图片的路径
+		$oldLogo = $this->field('logo,mbig_logo,big_logo,mid_logo,sm_logo')->find($id);
+		deleteImage($oldLogo);
+		/************* 删除会员价格 ******************/
+		$mpModel = D('member_price');
+		$mpModel->where(array(
+			'goods_id' => array('eq', $id),
+		))->delete();
+	}
+	
 	/**
-	 *  网站首页获取促销产品，默认是取出五件
-	 * 
-	 *	@param $limit  (optional)
-	 *  @return Array
-	 *  @author Homelam  
-	 *  
+	 * 取出一个分类下所有商品的ID[即考虑主分类也考虑了扩展分类】
+	 *
+	 * @param unknown_type $catId
 	 */
-	public function getPromoteGoods($limit=5){
-		$today = date("Y-m-d H:i");
-		$promoteGoods = $this->field('id, goods_name, promote_price, mid_logo')
-		->where(array(
-			"is_on_sale"	=> array('eq', '是'),
-			"promote_price" => array('gt', 0),
-			'promote_start_time' => array('elt', $today),
-			'promote_end_time'	=> array('egt', $today),
-		))->limit($limit)
-		->order('order_num ASC')
-		->select();
-
-		return $promoteGoods;
+	public function getGoodsIdByCatId($catId)
+	{
+		// 先取出所有子分类的ID
+		$catModel = D('category');
+		$children = $catModel->getChildren($catId);
+		// 和子分类放一起
+		$children[] = $catId;
+		/*************** 取出主分类或者扩展分类在这些分类中的商品 ****************/
+		// 取出主分类下的商品ID
+		$gids = $this->field('id')->where(array(
+			'cat_id' => array('in', $children),
+		))->select();
+		// 取出扩展分类下的商品的ID
+		$gcModel = D('goods_cat');
+		$gids1 = $gcModel->field('DISTINCT goods_id id')->where(array(
+			'cat_id' => array('IN', $children)
+		))->select();
+		// 把主分类的ID和扩展分类下的商品ID合并成一个二维数组【两个都不为空时合并，否则取出不为空的数组】
+		if($gids && $gids1)
+			$gids = array_merge($gids, $gids1);
+		elseif ($gids1)
+			$gids = $gids1;
+		// 二维转一维并去重
+		$id = array();
+		foreach ($gids as $k => $v)
+		{
+			if(!in_array($v['id'], $id))
+				$id[] = $v['id'];
+		}
+		return $id;
 	}
-
+	
 	/**
-	 *  网站首页获取条件产品，默认是取出五件
-	 * 	@param $recType 取出哪一种
-	 *	@param $limit  (optional)
-	 *  @return Array
-	 *  @author Homelam  
-	 *  
+	 * 实现翻页、搜索、排序
+	 *
 	 */
-	public function getRecGoods($recType, $limit=5){
-		$promoteGoods = $this->field('id, goods_name, shop_price, mid_logo')
-		->where(array(
-			"is_on_sale"	=> array('eq', '是'),
-			"$recType" => array('eq', "是"),
-		))->limit($limit)
-		->order('order_num ASC')
+	public function search($perPage = 5)
+	{
+		/*************** 搜索 ******************/
+		$where = array();  // 空的where条件
+		// 商品名称
+		$gn = I('get.gn');
+		if($gn)
+			$where['a.goods_name'] = array('like', "%$gn%");  // WHERE goods_name LIKE '%$gn%'
+		// 价格
+		$fp = I('get.fp');
+		$tp = I('get.tp');
+		if($fp && $tp)
+			$where['a.shop_price'] = array('between', array($fp, $tp)); // WHERE shop_price BETWEEN $fp AND $tp
+		elseif ($fp)
+			$where['a.shop_price'] = array('egt', $fp);   // WHERE shop_price >= $fp
+		elseif ($tp)
+			$where['a.shop_price'] = array('elt', $tp);   // WHERE shop_price <= $fp
+		// 是否上架
+		$ios = I('get.ios');
+		if($ios)
+			$where['a.is_on_sale'] = array('eq', $ios);  // WHERE is_on_sale = $ios
+		// 添加时间
+		$fa = I('get.fa');
+		$ta = I('get.ta');
+		if($fa && $ta)
+			$where['a.addtime'] = array('between', array($fa, $ta)); // WHERE shop_price BETWEEN $fp AND $tp
+		elseif ($fa)
+			$where['a.addtime'] = array('egt', $fa);   // WHERE shop_price >= $fp
+		elseif ($ta)
+			$where['a.addtime'] = array('elt', $ta);   // WHERE shop_price <= $fp
+		// 品牌
+		$brandId = I('get.brand_id');
+		if($brandId)
+			$where['a.brand_id'] = array('eq', $brandId);
+		// 分类的搜索[既有主分类也有扩展分类下的商品]
+		$catId = I('get.cat_id');
+		if($catId)
+		{
+			// 先查询出这个分类ID下所有的商品ID
+			$gids = $this->getGoodsIdByCatId($catId);
+			// 应用到取数据的WHERE上
+			$where['a.id'] = array('in', $gids);
+		}
+		
+		/*************** 翻页 ****************/
+		// 取出总的记录数
+		$count = $this->where($where)->count();
+		// 生成翻页类的对象
+		$pageObj = new \Think\Page($count, $perPage);
+		// 设置样式
+		$pageObj->setConfig('next', '下一页');
+		$pageObj->setConfig('prev', '上一页');
+		// 生成页面下面显示的上一页、下一页的字符串
+		$pageString = $pageObj->show();
+		
+		/***************** 排序 *****************/
+		$orderby = 'a.id';      // 默认的排序字段 
+		$orderway = 'desc';   // 默认的排序方式
+		$odby = I('get.odby');
+		if($odby)
+		{
+			if($odby == 'id_asc')
+				$orderway = 'asc';
+			elseif ($odby == 'price_desc')
+				$orderby = 'shop_price';
+			elseif ($odby == 'price_asc')
+			{
+				$orderby = 'shop_price';
+				$orderway = 'asc';
+			}
+		}
+		
+		/************** 取某一页的数据 ***************/
+		/**
+		 * SELECT a.*,b.brand_name FROM p39_goods a LEFT JOIN p39_brand b ON a.brand_id=b.id
+		 */
+		$data = $this->order("$orderby $orderway")                    // 排序
+		->field('a.*,b.brand_name,c.cat_name,GROUP_CONCAT(e.cat_name SEPARATOR "<br />") ext_cat_name')
+		->alias('a')
+		->join('LEFT JOIN __BRAND__ b ON a.brand_id=b.id      
+		        LEFT JOIN __CATEGORY__ c ON a.cat_id=c.id 
+		        LEFT JOIN __GOODS_CAT__ d ON a.id=d.goods_id 
+		        LEFT JOIN __CATEGORY__ e ON d.cat_id=e.id') 
+		->where($where)                                               // 搜索
+		->limit($pageObj->firstRow.','.$pageObj->listRows)            // 翻页
+		->group('a.id')
 		->select();
-
-		return $promoteGoods;
+		
+		/************** 返回数据 ******************/
+		return array(
+			'data' => $data,  // 数据
+			'page' => $pageString,  // 翻页字符串
+		);
 	}
-}		
+	
+	/**
+	 * 商品添加之后会调用这个方法，其中$data['id']就是新添加的商品的ID
+	 */
+	protected function _after_insert($data, $option)
+	{
+		/************ 处理商品属性的代码 **************/
+		$attrValue = I('post.attr_value');
+		$gaModel = D('goods_attr');
+		foreach ($attrValue as $k => $v)
+		{
+			// 把属性值的数组去重
+			$v = array_unique($v);
+			foreach ($v as $k1 => $v1)
+			{
+				$gaModel->add(array(
+					'goods_id' => $data['id'],
+					'attr_id' => $k,
+					'attr_value' => $v1,
+				));
+			}
+		}
+		
+		
+		/************ 处理扩展分类 ***************/
+		$ecid = I('post.ext_cat_id');
+		if($ecid)
+		{
+			$gcModel = D('goods_cat');
+			foreach ($ecid as $k => $v)
+			{
+				if(empty($v))
+					continue ;
+				$gcModel->add(array(
+					'cat_id' => $v,
+					'goods_id' => $data['id'],
+				));
+			}
+		}
+		/************ 处理相册图片 *****************/
+		if(isset($_FILES['pic']))
+		{
+			$pics = array();
+			foreach ($_FILES['pic']['name'] as $k => $v)
+			{
+				$pics[] = array(
+					'name' => $v,
+					'type' => $_FILES['pic']['type'][$k],
+					'tmp_name' => $_FILES['pic']['tmp_name'][$k],
+					'error' => $_FILES['pic']['error'][$k],
+					'size' => $_FILES['pic']['size'][$k],
+				);
+			}
+			$_FILES = $pics;  // 把处理好的数组赋给$_FILES，因为uploadOne函数是到$_FILES中找图片
+			$gpModel = D('goods_pic');
+			// 循环每个上传
+			foreach ($pics as $k => $v)
+			{
+				if($v['error'] == 0)
+				{
+					$ret = uploadOne($k, 'Goods', array(
+						array(650, 650),
+						array(350, 350),
+						array(50, 50),
+					));
+					if($ret['ok'] == 1)
+					{
+						$gpModel->add(array(
+							'pic' => $ret['images'][0],
+							'big_pic' => $ret['images'][1],
+							'mid_pic' => $ret['images'][2],
+							'sm_pic' => $ret['images'][3],
+							'goods_id' => $data['id'],
+						));
+					}
+				}
+			}
+		}
+		/************ 处理会员价格 ****************/
+		$mp = I('post.member_price');
+		$mpModel = D('member_price');
+		foreach ($mp as $k => $v)
+		{
+			$_v = (float)$v;
+			// 如果设置了会员价格就插入到表中
+			if($_v > 0)
+			{
+				$mpModel->add(array(
+					'price' => $_v,
+					'level_id' => $k,
+					'goods_id' => $data['id'],
+				));
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+

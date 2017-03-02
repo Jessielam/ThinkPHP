@@ -1,6 +1,5 @@
 <?php
 namespace Admin\Controller;
-
 class TypeController extends BaseController 
 {
     public function add()

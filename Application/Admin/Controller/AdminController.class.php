@@ -1,7 +1,6 @@
 <?php
 namespace Admin\Controller;
-
-class AdminController extends BaseController 
+class AdminController extends BaseController  
 {
     public function add()
     {
@@ -18,14 +17,13 @@ class AdminController extends BaseController
     		}
     		$this->error($model->getError());
     	}
+    	
+    	$roleModel = D('Role');
+    	$roleData = $roleModel->select();
 
-        //获取所有的角色
-        $roleModel = D('role');
-        $roleData = $roleModel->select();
-        //var_dump($roleData);die;
 		// 设置页面中的信息
 		$this->assign(array(
-            'roleData'  => $roleData,
+			'roleData' => $roleData,
 			'_page_title' => '添加管理员',
 			'_page_btn_name' => '管理员列表',
 			'_page_btn_link' => U('lst'),
@@ -51,22 +49,20 @@ class AdminController extends BaseController
     	$model = M('Admin');
     	$data = $model->find($id);
     	$this->assign('data', $data);
+    	
+    	$roleModel = D('Role');
+    	$roleData = $roleModel->select();
+    	// 取出当前管理员所在的角色ID
+    	$arModel = D('admin_role');
+    	$roleId = $arModel->field('GROUP_CONCAT(role_id) role_id')->where(array(
+    		'admin_id' => array('eq', $id),
+    	))->find();
 
-        //获取所有的角色
-        $roleModel = D('role');
-        $roleData = $roleModel->select();
-
-        $arModel = D('admin_role');
-        $arData = $arModel->field('GROUP_CONCAT(role_id) role_id')
-            ->where(array(
-                'admin_id' => array('eq', $id),
-            ))->find();
-        //var_dump($arData);die;
 		// 设置页面中的信息
 		$this->assign(array(
-            'roleData'  => $roleData,
-            'arData'    => $arData['role_id'],
-			'_page_title' => '管理员修改',
+			'roleId' => $roleId['role_id'],
+			'roleData' => $roleData,
+			'_page_title' => '修改管理员',
 			'_page_btn_name' => '管理员列表',
 			'_page_btn_link' => U('lst'),
 		));
@@ -89,7 +85,6 @@ class AdminController extends BaseController
     {
     	$model = D('Admin');
     	$data = $model->search();
-        //var_dump($data);die;
     	$this->assign(array(
     		'data' => $data['data'],
     		'page' => $data['page'],

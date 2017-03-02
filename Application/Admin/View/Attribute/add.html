@@ -11,20 +11,20 @@
             <tr>
                 <td class="label">属性类型：</td>
                 <td>
-                	<input type="radio" name="attr_type" checked="checked" value="唯一"  />唯一 
+                	<input type="radio" name="attr_type" value="唯一" checked="checked" />唯一 
                 	<input type="radio" name="attr_type" value="可选"  />可选 
                 </td>
             </tr>
             <tr>
                 <td class="label">属性可选值：</td>
                 <td>
-                    <textarea name="attr_option_values" cols='50' ></textarea>
+                	<textarea rows="6" cols="60" name="attr_option_values"></textarea>
                 </td>
             </tr>
             <tr>
                 <td class="label">所属类型：</td>
                 <td>
-                    <?php buildSelect('Type', 'type_id', 'id', 'type_name', I('get.type_id')); ?>
+                	<?php buildSelect('Type', 'type_id', 'id', 'type_name', I('get.type_id')); ?>
                 </td>
             </tr>
             <tr>

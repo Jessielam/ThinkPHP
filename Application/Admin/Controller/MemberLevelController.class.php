@@ -1,6 +1,5 @@
 <?php
 namespace Admin\Controller;
-
 class MemberLevelController extends BaseController 
 {
     public function add()

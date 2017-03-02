@@ -1,7 +1,7 @@
 <?php
 return array(
 	'tableName' => 'p39_privilege',    // 表名
-	'tableCnName' => '',  // 表的中文名
+	'tableCnName' => '权限',  // 表的中文名
 	'moduleName' => 'Admin',  // 代码生成到的模块
 	'withPrivilege' => FALSE,  // 是否生成相应权限的数据
 	'topPriName' => '',        // 顶级权限的名称
@@ -19,7 +19,7 @@ return array(
 		array('module_name', '1,30', '模块名称的值最长不能超过 30 个字符！', 2, 'length', 3),
 		array('controller_name', '1,30', '控制器名称的值最长不能超过 30 个字符！', 2, 'length', 3),
 		array('action_name', '1,30', '方法名称的值最长不能超过 30 个字符！', 2, 'length', 3),
-		array('parent_id', 'number', '上级权限id必须是一个整数！', 2, 'regex', 3),
+		array('parent_id', 'number', '上级权限Id必须是一个整数！', 2, 'regex', 3),
 	",
 	/********************** 表中每个字段信息的配置 ****************************/
 	'fields' => array(
@@ -44,12 +44,13 @@ return array(
 			'default' => '',
 		),
 		'parent_id' => array(
-			'text' => '上级权限id',
+			'text' => '上级权限Id',
 			'type' => 'text',
 			'default' => '0',
 		),
 	),
 	/**************** 搜索字段的配置 **********************/
 	'search' => array(
+	
 	),
 );

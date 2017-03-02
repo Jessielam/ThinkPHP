@@ -10,29 +10,30 @@ return array(
 	'pk' => 'id',    // 表中主键字段名称
 	/********************* 要生成的模型文件中的代码 ******************************/
 	// 添加时允许接收的表单中的字段
-	'insertFields' => "array('level_name','jifenz_bottom','jifenz_top')",
+	'insertFields' => "array('level_name','jifen_bottom','jifen_top')",
 	// 修改时允许接收的表单中的字段
-	'updateFields' => "array('id','level_name','jifenz_bottom','jifenz_top')",
+	'updateFields' => "array('id','level_name','jifen_bottom','jifen_top')",
 	'validate' => "
-		array('level_name', '1,30', '会员名称的值最长不能超过 30 个字符！', 1, 'length', 3),
-		array('jifenz_bottom', 'require', '积分下限不能为空！', 1, 'regex', 3),
-		array('jifenz_bottom', 'number', '积分下限必须是一个整数！', 1, 'regex', 3),
-		array('jifenz_top', 'require', '积分上限不能为空！', 1, 'regex', 3),
-		array('jifenz_top', 'number', '积分上限必须是一个整数！', 1, 'regex', 3),
+		array('level_name', 'require', '级别名称不能为空！', 1, 'regex', 3),
+		array('level_name', '1,30', '级别名称的值最长不能超过 30 个字符！', 1, 'length', 3),
+		array('jifen_bottom', 'require', '积分下限不能为空！', 1, 'regex', 3),
+		array('jifen_bottom', 'number', '积分下限必须是一个整数！', 1, 'regex', 3),
+		array('jifen_top', 'require', '积分上限不能为空！', 1, 'regex', 3),
+		array('jifen_top', 'number', '积分上限必须是一个整数！', 1, 'regex', 3),
 	",
 	/********************** 表中每个字段信息的配置 ****************************/
 	'fields' => array(
 		'level_name' => array(
-			'text' => '会员名称',
+			'text' => '级别名称',
 			'type' => 'text',
 			'default' => '',
 		),
-		'jifenz_bottom' => array(
+		'jifen_bottom' => array(
 			'text' => '积分下限',
 			'type' => 'text',
 			'default' => '',
 		),
-		'jifenz_top' => array(
+		'jifen_top' => array(
 			'text' => '积分上限',
 			'type' => 'text',
 			'default' => '',

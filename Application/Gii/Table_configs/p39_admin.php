@@ -1,7 +1,7 @@
 <?php
 return array(
 	'tableName' => 'p39_admin',    // 表名
-	'tableCnName' => '',  // 表的中文名
+	'tableCnName' => '管理员',  // 表的中文名
 	'moduleName' => 'Admin',  // 代码生成到的模块
 	'withPrivilege' => FALSE,  // 是否生成相应权限的数据
 	'topPriName' => '',        // 顶级权限的名称
@@ -15,10 +15,11 @@ return array(
 	'updateFields' => "array('id','username','password','cpassword')",
 	'validate' => "
 		array('username', 'require', '用户名不能为空！', 1, 'regex', 3),
-		array('username', '', '用户名已经存在！', 1, 'unique', 3),
 		array('username', '1,30', '用户名的值最长不能超过 30 个字符！', 1, 'length', 3),
-		array('password', 'require', '密码不能为空！', 1, 'regex', 1),
-		array('cpassword', 'require', '密码必须一致！', 1, 'confirm',1),
+		array('password', 'require', '密码不能为空！', 1, 'regex', 3),
+		array('password', '1,32', '密码的值最长不能超过 32 个字符！', 1, 'length', 3),
+		array('cpassword', 'password', '两次密码输入不一致！', 1, 'confirm', 3),
+		array('username', '', '用户名已经存在！', 1, 'unique', 3),
 	",
 	/********************** 表中每个字段信息的配置 ****************************/
 	'fields' => array(

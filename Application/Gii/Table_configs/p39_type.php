@@ -1,7 +1,7 @@
 <?php
 return array(
 	'tableName' => 'p39_type',    // 表名
-	'tableCnName' => '',  // 表的中文名
+	'tableCnName' => '类型',  // 表的中文名
 	'moduleName' => 'Admin',  // 代码生成到的模块
 	'withPrivilege' => FALSE,  // 是否生成相应权限的数据
 	'topPriName' => '',        // 顶级权限的名称
@@ -16,6 +16,7 @@ return array(
 	'validate' => "
 		array('type_name', 'require', '类型名称不能为空！', 1, 'regex', 3),
 		array('type_name', '1,30', '类型名称的值最长不能超过 30 个字符！', 1, 'length', 3),
+		array('type_name', '', '类型名称已经存在！', 1, 'unique', 3),
 	",
 	/********************** 表中每个字段信息的配置 ****************************/
 	'fields' => array(
@@ -26,7 +27,5 @@ return array(
 		),
 	),
 	/**************** 搜索字段的配置 **********************/
-	'search' => array(
-		array('type_name', 'normal', '', 'like', '类型名称'),
-	),
+	'search' => array(),
 );

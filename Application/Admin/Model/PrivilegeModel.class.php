@@ -11,7 +11,7 @@ class PrivilegeModel extends Model
 		array('module_name', '1,30', '模块名称的值最长不能超过 30 个字符！', 2, 'length', 3),
 		array('controller_name', '1,30', '控制器名称的值最长不能超过 30 个字符！', 2, 'length', 3),
 		array('action_name', '1,30', '方法名称的值最长不能超过 30 个字符！', 2, 'length', 3),
-		array('parent_id', 'number', '上级权限id必须是一个整数！', 2, 'regex', 3),
+		array('parent_id', 'number', '上级权限Id必须是一个整数！', 2, 'regex', 3),
 	);
 	/************************************* 递归相关方法 *************************************/
 	public function getTree()
@@ -34,6 +34,74 @@ class PrivilegeModel extends Model
 			}
 		}
 		return $ret;
+	}
+	/**
+	 * 检查当前管理员是否有权限访问这个页面
+	 */
+	public function chkPri()
+	{
+		// 获取当前管理员正要访问的模型名称、控制器名称、方法名称
+		// tP中正带三个常量
+		//MODULE_NAME , CONTROLLER_NAME , ACTION_NAME
+		$adminId = session('id');
+		// 如果是超级管理员直接返回 TRUE
+		if($adminId == 1)
+			return TRUE;
+		$arModel = D('admin_role');
+		$has = $arModel->alias('a')
+		->join('LEFT JOIN __ROLE_PRI__ b ON a.role_id=b.role_id 
+		        LEFT JOIN __PRIVILEGE__ c ON b.pri_id=c.id')
+		->where(array(
+			'a.admin_id' => array('eq', $adminId),
+			'c.module_name' => array('eq', MODULE_NAME),
+			'c.controller_name' => array('eq', CONTROLLER_NAME),
+			'c.action_name' => array('eq', ACTION_NAME),
+		))->count();
+		return ($has > 0);
+	}
+	/**
+	 * 获取当前管理员所拥有的前两级的权限
+	 *
+	 */
+	public function getBtns()
+	{
+		/*************** 先取出当前管理员所拥有的所有的权限 ****************/
+		$adminId = session('id');
+		if($adminId == 1)
+		{
+			$priModel = D('Privilege');
+			$priData = $priModel->select();
+		}
+		else 
+		{
+			// 取出当前管理员所在角色 所拥有的权限
+			$arModel = D('admin_role');
+			$priData = $arModel->alias('a')
+			->field('DISTINCT c.id,c.pri_name,c.module_name,c.controller_name,c.action_name,c.parent_id')
+			->join('LEFT JOIN __ROLE_PRI__ b ON a.role_id=b.role_id 
+			        LEFT JOIN __PRIVILEGE__ c ON b.pri_id=c.id')
+			->where(array(
+				'a.admin_id' => array('eq', $adminId),
+			))->select();
+		}
+		/*************** 从所有的权限中挑出前两级的 **********************/
+		$btns = array();  // 前两级权限
+		foreach ($priData as $k => $v)
+		{
+			if($v['parent_id'] == 0)
+			{
+				// 再找这个顶的子级
+				foreach ($priData as $k1 => $v1)
+				{
+					if($v1['parent_id'] == $v['id'])
+					{
+						$v['children'][] = $v1;
+					}
+				}
+				$btns[] = $v;
+			}
+		}
+		return $btns;
 	}
 	public function getChildren($id)
 	{
@@ -66,69 +134,10 @@ class PrivilegeModel extends Model
 			$this->error = '有下级数据无法删除';
 			return FALSE;
 		}
-	}
-
-	public function chkPri(){
-		//获取当前管理员正要访问的模型名称，控制器名称以及方法名称
-
-		$adminId = session('id');
-		//如果是超级管理员则直接返回TRUE
-		if($adminId==1){
-			return TRUE;
-		}
-
-		$arModel = D('admin_role');
-		$has = $arModel->alias('a')
-		->join('LEFT JOIN __ROLE_PRI__ b ON a.role_id=b.role_id
-			 	LEFT JOIN __PRIVILEGE__ c ON b.pri_id=c.id')
-		->where(array(
-			'a.admin_id' => array('eq',$adminId),
-			'c.module_name'	=> array('eq', MODULE_NAME),
-			'c.controller_name'	=> array('eq', CONTROLLER_NAME),
-			'c.action_name'	=> array('eq', ACTION_NAME),
-		))->count();
-
-		return ($has>0);
-	}
-
-	/**
-	 *
-	 *@return 当前管理员所拥有的前两级的权限
-	 *
-	 */
-	public function getBtns(){
-		/**************先取出当前管理员的所有权限*********/
-		$adminId=session("id");
-
-		if($adminId ==1 ){
-			$priModel = D('Privilege');
-			$priData = $priModel->select();
-		}else{
-			//先取出当前管理员所在的角色，所拥有的权限
-			$arModel = D('admin_role');
-			$priData = $arModel->alias('a')
-			->field('DISTINCT c.id, c.pri_name, c.module_name, c.controller_name, c.action_name, c.parent_id')
-			->join('LEFT JOIN __ROLE_PRI__ b ON a.role_id=b.role_id 
-				 	LEFT JOIN __PRIVILEGE__ c ON b.pri_id=c.id')
-			->where(array(
-				'a.admin_id' => array('eq', $adminId),
-			))->select();
-		}
-
-		//从所有的权限中取出前两级权限
-		$btns = array();
-		foreach($priData as $k=>$v){
-			if($v['parent_id']==0){
-				//找出该顶级的子级
-				foreach($priData as $k1=>$v1){
-					if($v1['parent_id']==$v['id']){
-						$v['children'][]=$v1;
-					}
-				}
-				$btns[] = $v;
-			}
-		}
-		
-		return $btns;
+		// 从中间表中把这个权限相关的数据删除
+		$rpModel = D('role_pri');
+		$rpData->where(array(
+			'pri_id' => array('eq', $option['where']['id'])
+		))->delete();
 	}
 }

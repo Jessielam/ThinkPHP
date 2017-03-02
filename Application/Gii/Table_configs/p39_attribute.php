@@ -1,7 +1,7 @@
 <?php
 return array(
 	'tableName' => 'p39_attribute',    // 表名
-	'tableCnName' => '属性',  // 表的中文名
+	'tableCnName' => '属性表',  // 表的中文名
 	'moduleName' => 'Admin',  // 代码生成到的模块
 	'withPrivilege' => FALSE,  // 是否生成相应权限的数据
 	'topPriName' => '',        // 顶级权限的名称
@@ -18,7 +18,7 @@ return array(
 		array('attr_name', '1,30', '属性名称的值最长不能超过 30 个字符！', 1, 'length', 3),
 		array('attr_type', 'require', '属性类型不能为空！', 1, 'regex', 3),
 		array('attr_type', '唯一,可选', \"属性类型的值只能是在 '唯一,可选' 中的一个值！\", 1, 'in', 3),
-		array('attr_option_values', '1,100', '属性可选值的值最长不能超过 100 个字符！', 2, 'length', 3),
+		array('attr_option_values', '1,300', '属性可选值的值最长不能超过 300 个字符！', 2, 'length', 3),
 		array('type_id', 'require', '所属类型Id不能为空！', 1, 'regex', 3),
 		array('type_id', 'number', '所属类型Id必须是一个整数！', 1, 'regex', 3),
 	",

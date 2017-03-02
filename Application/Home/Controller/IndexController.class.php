@@ -3,32 +3,13 @@ namespace Home\Controller;
 class IndexController extends NavController {
 	
     public function index(){
-
-        $goodsModel = D('Admin/goods');
-        $promoteGoods = $goodsModel->getPromoteGoods();
-
-        $isHotGoods = $goodsModel->getRecGoods("is_hot");
-        $isNewGoods = $goodsModel->getRecGoods("is_new");
-        $isBestGoods = $goodsModel->getRecGoods("is_best");
-
-        //获取楼层数据
-        $floorModel = D('Admin/category');
-        $floorData = $floorModel->getFloorData();
-
-        $this->assign(array(
-            'promoteGoods'=> $promoteGoods,
-            'isHotGoods'    => $isHotGoods,
-            'isNewGoods'    => $isNewGoods,
-            'isBestGoods'   => $isBestGoods,
-            'floorData'     => $floorData
-        ));
-
+        // 设置页面信息
     	$this->assign(array(
-    		'_page_title'	=> "京西商城",
-    		'_page_keywords'	=> '网上商城,php技术',
-    		'_page_description'	=> 'php商城',
-    		'_show_nav'		=>	1,
+    		'_show_nav' => 1,
+    		'_page_title' => '首页',
+    		'_page_keywords' => '首页',
+    		'_page_description' => '首页',
     	));
-        $this->display();
+    	$this->display();
     }
 }

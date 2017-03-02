@@ -20,13 +20,13 @@
             <tr>
                 <td class="label">属性可选值：</td>
                 <td>
-                    <textarea name="attr_option_values" id="attr_option_values" cols="50"><?php echo $data['attr_option_values']; ?></textarea>
+                	<textarea rows="6" cols="60" name="attr_option_values"><?php echo $data['attr_option_values']; ?></textarea>
                 </td>
             </tr>
             <tr>
                 <td class="label">所属类型：</td>
                 <td>
-                    <?php echo buildSelect('Type','type_id','id','type_name',I('get.id')); ?>
+                    <?php buildSelect('Type', 'type_id', 'id', 'type_name', I('get.type_id')); ?>
                 </td>
             </tr>
             <tr>

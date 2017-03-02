@@ -1,6 +1,6 @@
 <layout name="layout" />
 
-<!-- 商品列表 -->
+<!-- 列表 -->
 <form method="post" action="" name="listForm" onsubmit="">
     <div class="list-div" id="listDiv">
         <table cellpadding="3" cellspacing="1">
@@ -8,19 +8,18 @@
                 <th>分类名称</th>
                 <th>操作</th>
             </tr>
-            <?php foreach($data as $k=>$v): ?>
+            <?php foreach ($data as $k => $v): ?>
             <tr class="tron">
-                <td align="left"><?php echo str_repeat("-", $v[level]*8).$v['cat_name']; ?></td>
+                <td><?php echo str_repeat('-', 8*$v['level']) . $v['cat_name']; ?></td>
                 <td align="center">
-                <a href="__APP__/Goods/?goods_id=<{$val.goods_id}>" target="_blank" title="查看"><img src="__PUBLIC__/Admin/Images/icon_view.gif" width="16" height="16" border="0" /></a>
-                <a href="<?php echo U('edit?id='.$v['id']); ?>" title="编辑"><img src="__PUBLIC__/Admin/Images/icon_edit.gif" width="16" height="16" border="0" /></a>
-                <a onclick="return confirm('确认删除吗？')"href="<?php echo U('delete?id='.$v['id']); ?>" onclick="" title="回收站"><img src="__PUBLIC__/Admin/Images/icon_trash.gif" width="16" height="16" border="0" /></a></td>
+                	<a href="<?php echo U('edit?id='.$v['id']); ?>">修改</a>
+                	<a onclick="return confirm('确定要删除吗？');" href="<?php echo U('delete?id='.$v['id']); ?>">删除</a>
+               </td>
             </tr>
             <?php endforeach; ?>
         </table>
     </div>
 </form>
 
-<!--引入行高亮显示的js文件-->
+<!-- 引入行高亮显示 -->
 <script type="text/javascript" src="__PUBLIC__/Admin/Js/tron.js"></script>
-

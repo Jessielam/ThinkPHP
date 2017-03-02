@@ -1,13 +1,13 @@
 <?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>ECSHOP 管理中心</title>
+<title>管理中心</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="/Public/Admin/Styles/general.css" rel="stylesheet" type="text/css" />
 <link href="/Public/Admin/Styles/main.css" rel="stylesheet" type="text/css" />
 </head>
 <body style="background: #278296;color:white">
-<form method="post" action="/index.php/Admin/Login/login.html">
+<form method="post" action="/index.php/Admin/Login/login">
     <table cellspacing="0" cellpadding="0" style="margin-top:100px" align="center">
         <tr>
             <td>
@@ -30,18 +30,12 @@
                     <tr>
                         <td>验证码：</td>
                         <td>
-                            <input type="text" name="captcha" class="capital" />
+                            <input type="text" name="chkcode" class="capital" />
                         </td>
                     </tr>
                     <tr>
                         <td colspan="2" align="right">
-                            <img width="65%" style="cursor:pointer" onclick="this.src='<?php echo U('chkcode'); ?>#'+Math.random();" src="<?php echo U('chkcode'); ?>" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2" align="center">
-                            <input type="checkbox" value="1" name="remember" id="remember" />
-                            <label for="remember">请保存我这次的登录信息。</label>
+                            <img style="cursor:pointer;" onclick="this.src='<?php echo U('chkcode'); ?>#'+Math.random();" src="<?php echo U('chkcode'); ?>" />
                         </td>
                     </tr>
                     <tr>
@@ -54,6 +48,5 @@
             </td>
         </tr>
     </table>
-  <!--<input type="hidden" name="act" value="signin" />-->
 </form>
 </body>

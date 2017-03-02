@@ -1,6 +1,5 @@
 <?php
 namespace Admin\Controller;
-
 class PrivilegeController extends BaseController 
 {
     public function add()
@@ -25,7 +24,7 @@ class PrivilegeController extends BaseController
 		// 设置页面中的信息
 		$this->assign(array(
 			'_page_title' => '添加权限',
-			'_page_btn_name' => '权限列表列表',
+			'_page_btn_name' => '权限列表',
 			'_page_btn_link' => U('lst'),
 		));
 		$this->display();
@@ -59,7 +58,7 @@ class PrivilegeController extends BaseController
 
 		// 设置页面中的信息
 		$this->assign(array(
-			'_page_title' => '权限修改',
+			'_page_title' => '修改权限',
 			'_page_btn_name' => '权限列表',
 			'_page_btn_link' => U('lst'),
 		));
