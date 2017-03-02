@@ -20,7 +20,8 @@
 
 <div class="tab-div">
     <div id="tabbody-div">
-        <form  action="/index.php/Admin/Category/edit/id/2.html" method="post">
+        <form  action="/index.php/Admin/Category/edit/id/23.html" method="post">
+            <input type="hidden" name="id" value="<?php echo $data['id']; ?>" />
             <table width="90%" class="tab_table" align="center">
                 <tr>
                     <td class="label">选择分类: </td>
@@ -38,6 +39,13 @@
                 <tr>
                     <td class="label">分类名称：</td>
                     <td><input type="text" name="cat_name"  value="<?php echo $data['cat_name']; ?>" size="22"/>
+                </tr>
+                <tr>
+                    <td class="label">推荐到楼层：</td>
+                    <td>
+                        <input type="radio" name="is_floor" value="是" <?php if($data['is_floor']=="是") echo 'checked="checked"';?> /> 是
+                        <input type="radio" name="is_floor" value="否" <?php if($data['is_floor']=="否") echo 'checked="checked"';?> /> 否
+                    </td>
                 </tr>
             </table>
             <div class="button-div">

@@ -133,6 +133,13 @@
                     </td>
                 </tr>
                 <tr>
+                    <td class="label">推荐到楼层：</td>
+                    <td>
+                        <input type="radio" name="is_floor" value="是"/> 是
+                        <input type="radio" name="is_floor" value="否" checked="checked"/> 否
+                    </td>
+                </tr>
+                <tr>
                     <td class="label">显示排序：</td>
                     <td>
                         <input type="text" name="order_num" value="" size="8"/>

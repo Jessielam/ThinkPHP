@@ -4,8 +4,8 @@ use Think\Model;
 
 class GoodsModel extends Model{
 	//调用create方法的时候允许接收的字段
-	protected $insertFields = 'goods_name,brand_id,cat_id,market_price,shop_price,is_on_sale,goods_desc,type_id,promote_price,promote_start_time,promote_end_time,is_new,is_hot,is_best,order_num';
-	protected $updateFields = 'id,cat_id,goods_name,brand_id,market_price,shop_price,is_on_sale,goods_desc,type_id,promote_price,promote_start_time,promote_end_time,is_new,is_hot,is_best,order_num';
+	protected $insertFields = 'goods_name,brand_id,cat_id,market_price,shop_price,is_on_sale,goods_desc,type_id,promote_price,promote_start_time,promote_end_time,is_new,is_hot,is_best,order_num,is_floor';
+	protected $updateFields = 'id,cat_id,goods_name,brand_id,market_price,shop_price,is_on_sale,goods_desc,type_id,promote_price,promote_start_time,promote_end_time,is_new,is_hot,is_best,order_num,is_floor';
 	//定义验证规则  1、 1表示一定要验证
 	protected $_validate = array(
 		array('goods_name','require', '商品名称不能为空!', 1),
@@ -16,7 +16,7 @@ class GoodsModel extends Model{
 
 	public function getGoodsIdByCatId($cat_id){
 		//获取主分类
-		$catModel = D('category');
+		$catModel = D('Admin/category');
 		//获取该分类id下的所有子分类
 		$children = $catModel->getChildren($cat_id);
 		//把自己也加进去进行查找

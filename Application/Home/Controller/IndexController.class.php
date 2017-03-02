@@ -11,11 +11,16 @@ class IndexController extends NavController {
         $isNewGoods = $goodsModel->getRecGoods("is_new");
         $isBestGoods = $goodsModel->getRecGoods("is_best");
 
+        //获取楼层数据
+        $floorModel = D('Admin/category');
+        $floorData = $floorModel->getFloorData();
+
         $this->assign(array(
             'promoteGoods'=> $promoteGoods,
             'isHotGoods'    => $isHotGoods,
             'isNewGoods'    => $isNewGoods,
-            'isBestGoods'   => $isBestGoods
+            'isBestGoods'   => $isBestGoods,
+            'floorData'     => $floorData
         ));
 
     	$this->assign(array(

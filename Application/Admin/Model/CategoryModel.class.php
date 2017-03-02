@@ -4,8 +4,8 @@ use Think\Model;
 
 class CategoryModel extends Model 
 {
-	protected $insertFields = array('cat_name','parent_id');
-	protected $updateFields = array('id','cat_name','parent_id');
+	protected $insertFields = array('cat_name','parent_id','is_floor');
+	protected $updateFields = array('id','cat_name','parent_id','is_floor');
 
 	protected $_validate = array(
 		array('cat_name', 'require', '分类名称不能为空！', 1, 'regex', 3),
@@ -109,6 +109,60 @@ class CategoryModel extends Model
 			return $ret;
 		}else{
 			return $catData;
+		}
+	}
+
+	public function getFloorData(){
+		$floorData = S('floorData');
+		if($floorData){
+			return $floorData;
+		}else{
+			/*********** 想获取推荐的顶级分类***********/
+			$ret = $this->where(array(
+					'is_floor' => array('eq', '是'),
+					'parent_id'	=> array('eq', 0),
+				))->select();
+
+			$goodsModel = D('Admin/goods');
+			/******* 每个楼层取出楼层的数据*******/
+			foreach($ret as $k=>$v){
+				// 获取未推荐的二级分类
+				//先取出该分类先所有的商id
+				$goodsid = $goodsModel->getGoodsIdByCatId($v['id']);
+
+				//进行连表，取出该分类有用到的品牌信息
+				$ret[$k]['brand'] = $goodsModel->alias('a')
+				->field('DISTINCT brand_id, b.brand_name,b.logo')
+				->join('LEFT JOIN __BRAND__ b ON a.brand_id=b.id')
+				->where(array(
+					'a.id' => array('in',$goodsid),
+					'a.brand_id'  => array('neq',0)
+				))->limit(9)->select();
+
+				$ret[$k]['subCat']=$this->where(array(
+					'parent_id'	=> array('eq', $v['id']),
+					'is_floor'	=> array('eq', '否')
+				))->select();
+
+				// 获取推荐的二级分类
+				$ret[$k]['recSubCat']=$this->where(array(
+					'parent_id'	=> array('eq', $v['id']),
+					'is_floor'	=> array('eq', '是')
+				))->select();
+
+				//取出推荐二级分类的产品的数据
+				foreach($ret[$k]['recSubCat'] as $k1=> &$v1){
+					//获取对应的商品id
+					$gids = $goodsModel->getGoodsIdByCatId($v1['id']);
+					$v1['goods'] = $goodsModel->field('id,mid_logo,goods_name,shop_price')->where(array(
+						'is_on_sale' => array('eq', '是'),
+						'is_floor'	=> array('eq', '是'),
+						'id'  => array('IN', $gids),
+					))->order('order_num ASC')->limit(8)->select();
+				}
+			}
+			S('floorData', $ret, 86400);
+			return $ret;
 		}
 	}
 }

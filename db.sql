@@ -28,6 +28,7 @@ create table p39_goods
 	is_hot enum('是','否') not null default '是' comment '是否是热销产品',
 	is_best enum('是','否') not null default '是' comment '是否精品',
 	order_num tinyint unsigned not null default '100' comment '排列顺序',
+	is_floor enum('是','否') not null default '否' comment '推荐到楼层',
   	primary key (id),
 	key shop_price(shop_price),
 	key addtime(addtime),
@@ -41,6 +42,7 @@ create table p39_goods
 	key is_new(is_new),
 	key is_hot(is_hot),
 	key is_best(is_best),
+	key is_floor(is_floor),
 	key order_num(order_num)
 )engine=InnoDB default charset=utf8 comment '商品表';
 
@@ -80,7 +82,9 @@ create table p39_category
 	id mediumint unsigned not null auto_increment comment'分类Id',
 	cat_name varchar(30) not null default '' comment '分类名称',
 	parent_id mediumint unsigned not null default '0' comment '父级分类，0表示父级分类',
-	primary key(id)
+	is_floor enum('是','否') not null default '否' comment '推荐到楼层',
+	primary key(id),
+	key is_floor(is_floor) 
 )engine=InnoDB default charset=utf8 comment '商品分类表';
 
 drop table if exists p39_goods_pic;

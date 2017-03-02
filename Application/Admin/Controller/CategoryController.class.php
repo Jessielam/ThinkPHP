@@ -49,34 +49,42 @@ class CategoryController extends BaseController {
     }
 
     //修改分类
-    public function edit(){
-        $model = D('category');
+    public function edit()
+    {
         $id = I('get.id');
-        if(IS_POST){
-            if($model->create(I('post.'), 2)){
-                if(FALSE!==$model->save()){
-                    $this->success('修改成功', U('lst'));
+        // M:生成的是父类模型\Think\Model
+        $model = D('category');
+        if(IS_POST)
+        {   
+            if($model->create(I('post.'), 2))
+            {   
+                if(FALSE !== $model->save())
+                {
+                    $this->success('修改成功！', U('lst', array('p' => I('get.p', 1))));
                     exit;
                 }
             }
-            $error = $model->getError();
-            $this->error($error);
+            $this->error($model->getError());
         }
-
-        $catData = $model->getTree();
         $data = $model->find($id);
+        
+        // 取出所有的分类做下拉框
+        $catData = $model->getTree();
+        // 取出当前分类的子分类
         $children = $model->getChildren($id);
-
+        
         $this->assign(array(
-            'catData'   =>  $catData,
-            'data'      =>  $data,
-            'children'  =>  $children,
-            '_web_title'    =>  '修改分类',
-            '_page_title'   =>  '修改分类',
-            '_page_btn_name'    =>  '分类列表',
-            '_page_btn_link'    =>  U('lst'),
-        )); 
+            'children' => $children,
+            'data' => $data,
+            'catData' => $catData,
+        ));
 
+        // 设置页面中的信息
+        $this->assign(array(
+            '_page_title' => '修改分类',
+            '_page_btn_name' => '分类列表',
+            '_page_btn_link' => U('lst'),
+        ));
         $this->display();
     }
 

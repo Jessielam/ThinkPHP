@@ -161,6 +161,13 @@
                     </td>
                 </tr>
                 <tr>
+                    <td class="label">推荐到楼层：</td>
+                    <td>
+                        <input type="radio" name="is_floor" value="是" <?php if($data['is_floor']=="是") echo 'checked="checked"'; ?> /> 是
+                        <input type="radio" name="is_floor" value="否" <?php if($data['is_floor']=="否") echo 'checked="checked"'; ?>/> 否
+                    </td>
+                </tr>
+                <tr>
                     <td class="label">显示排序：</td>
                     <td>
                         <input type="text" name="order_num" value="<?php echo $data['order_num']; ?>" size="8"/>
