@@ -21,12 +21,27 @@ create table p39_goods
 	brand_id mediumint unsigned not null default '0' comment '品牌id',
 	cat_id mediumint unsigned not null default '0' comment '主分类Id',
 	type_id mediumint unsigned not null default '0' comment '类型Id',
+	promote_price decimal(10,2) not null default '0.00' comment '促销价格',
+	promote_start_date datetime not null comment '促销开始时间',
+	promote_end_date datetime not null comment '促销结束时间',
+	is_hot enum('是', '否') not null default '否' comment '热销产品',
+	is_new enum('是','否') not null default '否' comment '新货上市',
+	is_best enum('是','否') not null default '否' comment '精品',
+	is_floor enum('是','否') not null default '否' comment '推荐产品',
+	sort_num tinyint unsigned not null default '100' comment '排列顺序',
 	primary key (id),
 	key shop_price(shop_price),
 	key addtime(addtime),
 	key brand_id(brand_id),
 	key cat_id(cat_id),
-	key is_on_sale(is_on_sale)
+	key is_on_sale(is_on_sale),
+	key is_new(is_new),
+	key is_hot(is_hot),
+	key is_best(is_best),
+	key is_floor(is_floor),
+	key promote_price(promote_price),
+	key promote_start_date(promote_start_date),
+	key promote_end_date(promote_end_date)
 )engine=InnoDB default charset=utf8 comment '商品';
 
 drop table if exists p39_brand;
@@ -78,7 +93,9 @@ create table p39_category
 	id mediumint unsigned not null auto_increment comment 'Id',
 	cat_name varchar(30) not null comment '分类名称',
 	parent_id mediumint unsigned not null default '0' comment '上级分类的Id,0:顶级分类',
-	primary key (id)
+	is_floor enum('是','否') not null default '否' comment '是否推荐至楼层',
+	primary key (id),
+	key is_floor(is_floor)
 )engine=InnoDB default charset=utf8 comment '分类';
 
 drop table if exists p39_goods_cat;

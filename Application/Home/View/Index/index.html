@@ -152,7 +152,7 @@
 				<!-- 疯狂抢购 start-->
 				<div class="crazy">
 					<ul>
-						<?php foreach ($goods1 as $k => $v): ?>
+						<?php foreach ($promoteData as $k => $v): ?>
 						<li>
 							<dl>
 								<dt><a href="<?php echo U('goods?id='.$v['id']); ?>"><?php showImage($v['mid_logo']); ?></a></dt>
@@ -168,7 +168,7 @@
 				<!-- 热卖商品 start -->
 				<div class="hot none">
 					<ul>
-						<?php foreach ($goods3 as $k => $v): ?>
+						<?php foreach ($hotProductData as $k => $v): ?>
 						<li>
 							<dl>
 								<dt><a href="<?php echo U('goods?id='.$v['id']); ?>"><?php showImage($v['mid_logo']); ?></a></dt>
@@ -184,7 +184,7 @@
 				<!-- 精品商品 atart -->
 				<div class="recommend none">
 					<ul>
-						<?php foreach ($goods4 as $k => $v): ?>
+						<?php foreach ($bestProductData as $k => $v): ?>
 						<li>
 							<dl>
 								<dt><a href="<?php echo U('goods?id='.$v['id']); ?>"><?php showImage($v['mid_logo']); ?></a></dt>
@@ -200,7 +200,7 @@
 				<!-- 新品上架 start-->
 				<div class="new none">
 					<ul>
-						<?php foreach ($goods2 as $k => $v): ?>
+						<?php foreach ($newProductData as $k => $v): ?>
 						<li>
 							<dl>
 								<dt><a href="<?php echo U('goods?id='.$v['id']); ?>"><?php showImage($v['mid_logo']); ?></a></dt>

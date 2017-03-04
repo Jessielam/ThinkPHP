@@ -91,16 +91,3 @@ class CategoryController extends BaseController
 			$this->error('删除失败！原因：'.$model->getError());
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-

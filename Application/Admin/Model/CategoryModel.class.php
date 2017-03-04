@@ -3,8 +3,8 @@ namespace Admin\Model;
 use Think\Model;
 class CategoryModel extends Model 
 {
-	protected $insertFields = array('cat_name','parent_id');
-	protected $updateFields = array('id','cat_name','parent_id');
+	protected $insertFields = array('cat_name','parent_id','is_floor');
+	protected $updateFields = array('id','cat_name','parent_id','is_floor');
 	protected $_validate = array(
 		array('cat_name', 'require', '分类名称不能为空！', 1, 'regex', 3),
 	);
@@ -115,6 +115,63 @@ class CategoryModel extends Model
 		}
 		else
 			return $catData;  // 有缓存直接返回缓存数据
+	}
+
+	//获取首页楼层数据
+	public function getFloorData(){
+		$floorData = S('floorData');
+		if($floorData){
+			return $floorData;
+		}else{
+			//获取推荐的顶级分类并返回
+			$ret = $this->where(array(
+				'parent_id'	=> array('eq',0),
+				'is_floor'	=> array('eq','是'),	
+			))->select();
+
+			//获取推荐二级分类对应的产品
+			$goodsModel = D('Admin/goods');
+
+			//推荐顶级分类下未推荐的二级分类以及推荐的二级分类
+			foreach($ret as $k=>$v){
+				//取出这个楼层下所有的商品
+				$goodIds = $goodsModel->getGoodsIdByCatId($v['id']);
+
+				$ret[$k]['brand'] = $goodsModel->alias('a')
+				->field('DISTINCT brand_id,b.id,b.logo')
+				->join('LEFT JOIN __BRAND__ b ON a.brand_id=b.id')
+				->where(array(
+						'a.id' => array('in', $goodIds),
+						'a.brand_id' => array('neq',0)
+					))->limit(9)
+				->select();	
+
+				$ret[$k]['subCat'] = $this->where(array(
+					'parent_id' => array('eq', $v['id']),
+					'is_floor'	=> array('eq','否'),
+				))->select();
+
+				$ret[$k]['recSubCat'] = $this->where(array(
+					'parent_id' => array('eq', $v['id']),
+					'is_floor'	=> array('eq','是'),
+				))->select();
+
+				foreach($ret[$k]['recSubCat'] as $k1=>&$v1){
+					//考虑扩展分类
+					$gids = $goodsModel->getGoodsIdByCatId($v1['id']);
+					//获取对应的产品数据, 默认取出8件
+					$v1['goods'] = $goodsModel->field('id,goods_name,shop_price,mid_logo')
+					->where(array(
+						'is_floor'	=> array('eq','是'),
+						'is_on_sale'	=> array('eq','是'),
+						'id'	=> array('in',$gids)
+					))->limit(8)->order('sort_num ASC')->select();
+				}
+			}
+			//缓存数据，有效期设置为一天
+			S('floorData', $ret, 86400);
+			return $ret;
+		}
 	}
 }
 

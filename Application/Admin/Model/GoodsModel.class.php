@@ -4,9 +4,9 @@ use Think\Model;
 class GoodsModel extends Model 
 {
 	// 添加时调用create方法允许接收的字段
-	protected $insertFields = 'goods_name,market_price,shop_price,is_on_sale,goods_desc,brand_id,cat_id,type_id';
+	protected $insertFields = 'goods_name,market_price,shop_price,is_on_sale,goods_desc,brand_id,cat_id,type_id,promote_price,promote_start_date,promote_end_date,is_new,is_hot,is_best,is_floor,sort_num';
 	// 修改时调用create方法允许接收的字段
-	protected $updateFields = 'id,goods_name,market_price,shop_price,is_on_sale,goods_desc,brand_id,cat_id,type_id';
+	protected $updateFields = 'id,goods_name,market_price,shop_price,is_on_sale,goods_desc,brand_id,cat_id,type_id,,promote_price,promote_start_date,promote_end_date,is_new,is_hot,is_best,is_floor,sort_num';
 	//定义验证规则
 	protected $_validate = array(
 		array('cat_id', 'require', '必须选择主分类！', 1),
@@ -232,7 +232,7 @@ class GoodsModel extends Model
 	public function getGoodsIdByCatId($catId)
 	{
 		// 先取出所有子分类的ID
-		$catModel = D('category');
+		$catModel = D('Admin/category');
 		$children = $catModel->getChildren($catId);
 		// 和子分类放一起
 		$children[] = $catId;
@@ -453,6 +453,31 @@ class GoodsModel extends Model
 				));
 			}
 		}
+	}
+
+	public function getPromoteProducts($limit=5){
+		//获取符合条件的促销产品
+		$today = date('Y-m-d H:i:s');
+		$promoteData = $this->field('id,goods_name,mid_logo,promote_price')
+		->where(array(
+			'is_on_sale' => array('eq', '是'),
+			'promote_price'	=> array('gt', 0),
+			'promote_start_date' => array('elt', $today),
+			'promote_end_date' => array('egt', $today)
+		))->limit($limit)->order('sort_num ASC')->select();
+		
+		return $promoteData;
+	}
+
+	public function getRecProducts($recType, $limit=5){
+		$recProducts = $this->field('id,goods_name,shop_price,mid_logo')
+		->where(array(
+			'is_on_sale' => array('eq','是'),
+			"$recType"	=> array('eq','是')
+		))->limit($limit)->order('sort_num ASC')
+		->select();
+
+		return $recProducts;
 	}
 }
 

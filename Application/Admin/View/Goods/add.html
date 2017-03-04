@@ -76,10 +76,58 @@
                     </td>
                 </tr>
                 <tr>
+                    <td class="label">促销售价：</td>
+                    <td>
+                        <input type="text" name="promote_price" value="0.00" size="20" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">促销时间：</td>
+                    <td>
+                        From: <input type="text" id="promote_start_date" name="promote_start_date" value="" size="20" />
+                        To: <input type="text" id="promote_end_date" name="promote_end_date" value="" size="20" />
+                    </td>
+                </tr>
+                <tr>
                     <td class="label">是否上架：</td>
                     <td>
-                        <input type="radio" name="is_on_sale" value="是" checked="checked" /> 是
-                        <input type="radio" name="is_on_sale" value="否" /> 否
+                        <input type="radio" name="is_on_sale" value="是" /> 是
+                        <input type="radio" name="is_on_sale" value="否" checked="checked" /> 否
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">是否新品：</td>
+                    <td>
+                        <input type="radio" name="is_new" value="是" /> 是
+                        <input type="radio" name="is_new" value="否" checked="checked" /> 否
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">是否热销：</td>
+                    <td>
+                        <input type="radio" name="is_hot" value="是" /> 是
+                        <input type="radio" name="is_hot" value="否" checked="checked" /> 否
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">是否精品：</td>
+                    <td>
+                        <input type="radio" name="is_best" value="是" /> 是
+                        <input type="radio" name="is_best" value="否" checked="checked" /> 否
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">是否推荐至楼层：</td>
+                    <td>
+                        <input type="radio" name="is_floor" value="是" /> 是
+                        <input type="radio" name="is_floor" value="否" checked="checked" /> 否
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">显示顺序：</td>
+                    <td>
+                        <input type="test" name="sort_num" value="100" size="8"/><br />
+                        <span style="color:#F00;font-size:12px;font-weight:bold;">数字小显示在前面！</span>
                     </td>
                 </tr>
             </table>
@@ -133,6 +181,20 @@
     </div>
 </div>
 
+<!-- 引入时间插件 -->
+<link href="__PUBLIC__/datetimepicker/jquery-ui-1.9.2.custom.min.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" charset="utf-8" src="__PUBLIC__/datetimepicker/jquery-ui-1.9.2.custom.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="__PUBLIC__/datetimepicker/datepicker-zh_cn.js"></script>
+<link rel="stylesheet" media="all" type="text/css" href="__PUBLIC__/datetimepicker/time/jquery-ui-timepicker-addon.min.css" />
+<script type="text/javascript" src="__PUBLIC__/datetimepicker/time/jquery-ui-timepicker-addon.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/datetimepicker/time/i18n/jquery-ui-timepicker-addon-i18n.min.js"></script>
+<script>
+// 添加时间插件
+$.timepicker.setDefaults($.timepicker.regional['zh-CN']);  // 设置使用中文 
+
+$("#promote_start_date").datetimepicker();
+$("#promote_end_date").datetimepicker();
+</script>
 
 <!--导入在线编辑器 -->
 <link href="__PUBLIC__/umeditor1_2_2-utf8-php/themes/default/css/umeditor.css" type="text/css" rel="stylesheet">
