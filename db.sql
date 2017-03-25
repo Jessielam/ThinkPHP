@@ -199,3 +199,26 @@ create table p39_admin
 )engine=InnoDB default charset=utf8 comment '管理员';
 INSERT INTO p39_admin(id,username,password) VALUES(1,'root','21232f297a57a5a743894a0e4a801fc3');
 
+drop table if exists p39_member;
+create table p39_member
+(
+	id mediumint unsigned not null auto_increment comment 'Id',
+	username varchar(30) not null comment '用户名',
+	password char(32) not null comment '密码',
+	face varchar(150) not null default '' comment '用户头像',
+	jifen mediumint unsigned not null default '0' comment '会员积分',
+	primary key (id)
+)engine=InnoDB default charset=utf8 comment '会员';
+
+drop table if exists p39_cart;
+create table p39_cart
+(
+	id mediumint unsigned not null auto_increment comment 'id',
+	goods_id mediumint unsigned not null comment '商品id',
+	goods_attr_id varchar(150) not null default '' comment '商品属性',
+	goods_number mediumint unsigned not null comment '购买数量',
+	member_id mediumint unsigned not null comment '会员id',
+	primary key(id),
+	key member_id(member_id)
+)engine=InnoDB default charset=utf8 comment '购物车表';
+

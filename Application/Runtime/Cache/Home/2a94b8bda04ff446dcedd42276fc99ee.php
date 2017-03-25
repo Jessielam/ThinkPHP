@@ -11,6 +11,7 @@
 	<link rel="stylesheet" href="/Public/Home/style/header.css" type="text/css">
 	<link rel="stylesheet" href="/Public/Home/style/bottomnav.css" type="text/css">
 	<link rel="stylesheet" href="/Public/Home/style/footer.css" type="text/css">
+	<link rel="shortcut icon" href="/Public/Home/images/dconline.ico" type="image/x-icon"/>
 	<!-- 引入公共的JS -->
 	<script type="text/javascript" src="/Public/Home/js/jquery-1.8.3.min.js"></script>
 	<script type="text/javascript" src="/Public/Home/js/header.js"></script>
@@ -24,7 +25,7 @@
 			</div>
 			<div class="topnav_right fr">
 				<ul>
-					<li>您好，欢迎来到京西！[<a href="login.html">登录</a>] [<a href="register.html">免费注册</a>] </li>
+					<li id="loginInfo"></li>
 					<li class="line">|</li>
 					<li>我的订单</li>
 					<li class="line">|</li>
@@ -48,7 +49,7 @@
 	<div class="header w1210 bc mt15">
 		<!-- 头部上半部分 start 包括 logo、搜索、用户中心和购物车结算 -->
 		<div class="logo w1210">
-			<h1 class="fl"><a href="index.html"><img src="/Public/Home/images/logo.png" alt="京西商城"></a></h1>
+			<h1 class="fl"><a href="<?php echo U('index'); ?>"><img src="/Public/Home/images/logo.png" alt="京西商城"></a></h1>
 			<!-- 头部搜索 start -->
 			<div class="search fl">
 				<div class="search_form">
@@ -117,12 +118,12 @@
 			<div class="cart fl">
 				<dl>
 					<dt>
-						<a href="">去购物车结算</a>
+						<a id="cart_list" href="<?php echo U('cart/lst'); ?>">去购物车结算</a>
 						<b></b>
 					</dt>
 					<dd>
-						<div class="prompt">
-							购物车中还没有商品，赶紧选购吧！
+						<div class="prompt" id="cart_div_list">
+							<img src="/Public/Home/images/loading.gif" />
 						</div>
 					</dd>
 				</dl>
@@ -636,6 +637,20 @@
 		</p>
 	</div>
 	<!-- 底部版权 end -->
-
 </body>
 </html>
+<script type="text/javascript">
+	$.ajax({
+		type:"GET",
+		url:"<?php echo U('Member/ajaxCheckLogin'); ?>",
+		dataType:"json",
+		success:function(data){
+			if(data.login==1){
+				var li = '您好，'+ data.username +'[<a href="<?php echo U('member/logout');?>">退出</a>]';
+			}else{
+				var li = '您好，欢迎来到京西！[<a href="<?php echo U('member/login');?>">登录</a>] [<a href="<?php echo U('member/regist');?>">免费注册</a>]';
+			}
+			$('#loginInfo').html(li);
+		}
+	});
+</script>

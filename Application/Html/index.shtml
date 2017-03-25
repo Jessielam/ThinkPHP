@@ -11,6 +11,7 @@
 	<link rel="stylesheet" href="/Public/Home/style/header.css" type="text/css">
 	<link rel="stylesheet" href="/Public/Home/style/bottomnav.css" type="text/css">
 	<link rel="stylesheet" href="/Public/Home/style/footer.css" type="text/css">
+	<link rel="shortcut icon" href="/Public/Home/images/dconline.ico" type="image/x-icon"/>
 	<!-- 引入公共的JS -->
 	<script type="text/javascript" src="/Public/Home/js/jquery-1.8.3.min.js"></script>
 	<script type="text/javascript" src="/Public/Home/js/header.js"></script>
@@ -24,7 +25,7 @@
 			</div>
 			<div class="topnav_right fr">
 				<ul>
-					<li>您好，欢迎来到京西！[<a href="login.html">登录</a>] [<a href="register.html">免费注册</a>] </li>
+					<li id="loginInfo"></li>
 					<li class="line">|</li>
 					<li>我的订单</li>
 					<li class="line">|</li>
@@ -48,7 +49,7 @@
 	<div class="header w1210 bc mt15">
 		<!-- 头部上半部分 start 包括 logo、搜索、用户中心和购物车结算 -->
 		<div class="logo w1210">
-			<h1 class="fl"><a href="index.html"><img src="/Public/Home/images/logo.png" alt="京西商城"></a></h1>
+			<h1 class="fl"><a href="/index.php/Home/Index/index.html"><img src="/Public/Home/images/logo.png" alt="京西商城"></a></h1>
 			<!-- 头部搜索 start -->
 			<div class="search fl">
 				<div class="search_form">
@@ -415,27 +416,6 @@
 				<!-- 疯狂抢购 start-->
 				<div class="crazy">
 					<ul>
-												<li>
-							<dl>
-								<dt><a href="/index.php/Home/Index/goods/id/6.html"><img   src='http://www.homelam.com/Public/Uploads/Goods/2015-10-19/thumb_2_56243bf2e5d0a.jpg' /></a></dt>
-								<dd><a href="/index.php/Home/Index/goods/id/6.html">555555555555555555</a></dd>
-								<dd><span>售价：</span><strong> ￥99.00元</strong></dd>
-							</dl>
-						</li>
-												<li>
-							<dl>
-								<dt><a href="/index.php/Home/Index/goods/id/7.html"><img   src='http://www.homelam.com/Public/Uploads/Goods/2015-10-19/thumb_2_56243bebac574.jpg' /></a></dt>
-								<dd><a href="/index.php/Home/Index/goods/id/7.html">商品属性测试</a></dd>
-								<dd><span>售价：</span><strong> ￥6.00元</strong></dd>
-							</dl>
-						</li>
-												<li>
-							<dl>
-								<dt><a href="/index.php/Home/Index/goods/id/4.html"><img   src='http://www.homelam.com/Public/Uploads/Goods/2015-10-16/thumb_2_562068ae6c614.jpg' /></a></dt>
-								<dd><a href="/index.php/Home/Index/goods/id/4.html">新的联想商品</a></dd>
-								<dd><span>售价：</span><strong> ￥1.00元</strong></dd>
-							</dl>
-						</li>
 											</ul>	
 				</div>
 				<!-- 疯狂抢购 end-->
@@ -835,6 +815,20 @@
 		</p>
 	</div>
 	<!-- 底部版权 end -->
-
 </body>
 </html>
+<script type="text/javascript">
+	$.ajax({
+		type:"GET",
+		url:"/index.php/Home/Member/ajaxCheckLogin.html",
+		dataType:"json",
+		success:function(data){
+			if(data.login==1){
+				var li = '您好，'+ data.username +'[<a href="/index.php/Home/member/logout.html">退出</a>]';
+			}else{
+				var li = '您好，欢迎来到京西！[<a href="/index.php/Home/member/login.html">登录</a>] [<a href="/index.php/Home/member/regist.html">免费注册</a>]';
+			}
+			$('#loginInfo').html(li);
+		}
+	});
+</script>

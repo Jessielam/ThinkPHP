@@ -479,16 +479,69 @@ class GoodsModel extends Model
 
 		return $recProducts;
 	}
+
+	/**
+	 * 获取商品的会员的实际购买价格
+	 * 属于该会员的会员价格以及促销价格取两者中的小的值
+	 *
+	 * @param $goodsId 商品id
+	 * @return string  返回该件商品的会员价格或者促销价格
+	 * @date 2017-3-12
+	 */
+	public function getMemberPrice($goodsId){
+		//获取促销价格
+		$today = date('Y-m-d H:i');
+		$levelId = session('level_id');
+
+		$promotePrice = $this->field('promote_price')
+		->where(array(
+			'id'	=> array('eq', $goodsId),
+			'promote_price'	=> array('gt',0),
+			'promote_start_date' => array('elt', $today),
+			'promote_end_date'	=> array('egt', $today),
+			'is_on_sale'	=> array('eq', '是'),
+		))->find();
+		//根据商品id以及会员id获取两者中的小值
+		//1.获取会员价格
+		if($levelId){
+			//已经登录的情况下
+			$mpModel = D('member_price');
+			$mpData = $mpModel->field('price')
+			->where(array(
+				'level_id'	=> array('eq', $levelId),
+				'goods_id'	=> array('eq', $goodsId),
+			))->find();
+			//如果有为该级别设置会员价格
+			if($mpData['price']){
+				if($promotePrice['promote_price']){
+					return min($mpData['price'],$promotePrice['promote_price']);
+				}else{
+					return $mpData['price'];
+				}
+			}else{
+				//如果没有设置会员那价格,这是根据本店价格与促销价格对比
+				$price = $this->field('shop_price')
+				->where(array(
+					'id' => array('eq', $goodsId),
+				))->find();
+				if($promotePrice['promote_price']){
+					return min($promotePrice['promote_price'], $price['shop_price']);
+				}else{
+					return $price['shop_price'];
+				}
+			}	
+		}else{
+			//未登录的情况下
+			//如果没有设置会员那价格,这是根据本店价格与促销价格对比
+			$price = $this->field('shop_price')
+			->where(array(
+				'id' => array('eq', $goodsId),
+			))->find();
+			if($promotePrice['promote_price']){
+				return min($promotePrice['promote_price'], $price['shop_price']);
+			}else{
+				return $price['shop_price'];
+			}
+		}
+	}
 }
-
-
-
-
-
-
-
-
-
-
-
-

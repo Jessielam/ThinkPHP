@@ -3,6 +3,7 @@
 <head>
 <title>ECSHOP 管理中心</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="/Public/Home/images/dconline.ico" type="image/x-icon"/>
 <script type="Text/Javascript" language="JavaScript">
 
 if (window.top != window) {

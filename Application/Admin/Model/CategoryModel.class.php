@@ -173,6 +173,25 @@ class CategoryModel extends Model
 			return $ret;
 		}
 	}
+
+	/**
+	 * 取出该分类的父分类
+	 * @param $catId 需要找父分类的分类id
+	 * @return array
+	 * @author Homelam
+	 * Time:  
+	 */
+	public function parentPath($catId){
+		static $ret = array();
+		//取出分类的具体信息
+		$info = $this->field('id,cat_name,parent_id')->find($catId);
+		$ret[] = $info;
+		//如果还有上级继续取上级
+		if($info['parent_id']>0){
+			$this->parentPath($info['parentPath']);
+		}
+		return $ret;
+	}
 }
 
 
